@@ -1,0 +1,158 @@
+include includes/mixins.pug
+
+doctype html
+html
+
+  include includes/head.pug
+
+  body
+    .main
+      .hero
+        - var n = 0;
+        while n < 12
+         .hero-cell
+          if n == 6
+            = 'Building a Becak'
+         - n++
+
+      artical.intro
+        .inner
+          p.
+           I came to Jogja in November 2017 to build a becak to ride in San Francisco. I knew it would need good brakes and gears for the hills and, since the cost of shipping would be high, I wanted a becak that would justify the expense. 
+          p.
+           A 250lb factory-built becak made from rebar and pipes wasn’t going to do it for me. New becaks, made to sell for $300, are primarily bought by hotels as lobby displays and the quality of the welds and steel has declined.
+          p.
+           Rather than a modifying a factory built bike, it looked as though I needed to build a custom becak. Arie, the translator at the becak factory where we met, happened to be an artist/bike aficionado: we set out to find a good welder.
+
+      artical.reverse.pg1
+        .half-col
+          p.
+           When building something custom you have to specify everything. Jogja is full of beautiful becaks and inspiring art. So, I went around with a tape measure, a camera, and the Sketch app, documenting murals, handicrafts and the most interesting becaks I came across.
+          p.
+           In 2014, another foreigner, Scott Thompson, built a custom becak to ride across Sumatra for charity, and incidentally, logged the record for distance on a becak. His bike had disc breaks, gears and a rear frame made of Chromoly steel. The builder of the rear frame, in Malang, had the old plans and access to good steel tubes. I ordered a frame like Scott’s but more curvy and upright, and I had the head tube angled forward so the frame would tilt to the inside when cornering.
+        .half-col
+          img(src='images/IMG_5370.jpg', width='512px', alt='')
+
+      artical.pg2
+        img(src='images/IMG_5467.jpg', width='356px', alt='')
+
+      .pg3
+        .parallax
+          .image
+        artical
+          -/* img(src='images/IMG_0102.jpg', width='1024px', alt='') */
+          .inner
+            p.
+             The welding shop we chose is a family business on the east edge of Jogja. The father welds gutters and roof supports, but his son Kus fixes anything people bring to him and is highly sought after by the biking community for his bike modifications.
+
+            p.
+             Since my Chromoly rear frame wouldn’t be ready for six weeks, Kus started by building a temporary frame with the rear triangle of an old mountain bike. This was needed to hold up the front of the becak during construction, but it turned out better looking than the Chromoly frame that was supposed to be replacing it.
+
+      .pg4
+        .parallax
+          .image
+        artical
+          -/* img(src='images/IMG_5547.jpg', width='1024px', alt='') */
+          .inner
+            p.
+              Initially we thought about getting an old becak front end to take apart and copy, but Kus wanted drawings. Since we couldn’t find anyone to draw plans, I took that on. This gave me a critical role and made me a much keener observer of becaks than I would have been. The revisions never finished. There were always more details to draw or decorations to try out. 
+
+      artical.pg5
+        .boxed
+          img(src='images/IMG_5821.jpg', width='450px', alt='').half-col
+          img(src='images/IMG_5547.jpg', width='450px', alt='').half-col
+        .inner
+          p.
+            The decorative steel arm rests which go all the way down along the edges of the passenger cab to the foot rest are normally made of solid steel rods and are very heavy. The newer becaks use thinner rods, but I liked the original gauge. We considered using aluminum to save weight but settled on tubular stainless steel for the straighter sections, with solid steel for the circles. Solid rod can be bent in a smaller radius. The bending and welding was a major task which took Kus well over a week.
+
+      .pg6
+        .parallax
+          .image
+          //-img(src='images/IMG_5818.jpg', width='1024px', alt='')
+
+      artical.pg7
+        .boxed
+          img(src='images/IMG_4795.jpg', width='450px', alt='').half-col
+          img(src='images/IMG_0110.jpg', width='450px', alt='').half-col
+        .inner
+          p.
+            Every region has its own style of becaks. The Jogja-style becak, with its big round wheel covers made from old oil drums, seems to be based on the avoidance of square shapes. All the Jogja becaks were made by just two companies, one of which is out of business and the other is struggling. I preferred the horizontal grill fins and curvy toe step of the defunct company.
+      .pg8
+        .parallax
+          .image
+          //-img(src='images/IMG_5921.jpg', width='1024px', alt='')
+
+      artical.pg9
+        .boxed
+          img(src='images/IMG_5901.jpg', width='450px', alt='').half-col
+          img(src='images/IMG_5911.jpg', width='450px', alt='').half-col
+        .inner
+          p.caption.
+            what to say about these
+
+      .pg10
+        .parallax
+          .image
+          
+          //-img(src='images/IMG_6019.jpg', width='1024px', alt='')
+
+      artical.pg11
+        .boxed
+          img(src='images/IMG_0099.jpg', width='300px', alt='').third-col
+          img(src='images/Q5A7064.jpg', width='300px', alt='').third-col
+          img(src='images/Q5A7060.jpg', width='300px', alt='').third-col
+        .inner
+          p.caption
+            | Kus’s artistic genius shows in the components he fashioned by hand. 
+            br/
+            | Left: dropouts with disc brake mounts
+            br/
+            | Middle: front brake cable splitter
+            br/
+            | Right: front disc brake mount
+            br/
+            | These are the kinds of details I had no idea how to design; Kus just made them work.
+      .pg12
+        .parallax
+          .image
+        artical
+          //-img(src='images/IMG_6093.jpg', width='1024px', height='731' alt='')
+          .inner
+            p.
+              A regular becak has sides fully paneled in flat teakwood and is barely wide enough for two westerners. We made the seating area a little wider by using thin aluminum panels at the back of the seat and sinking them out under the wheel covers to provide 6cm of additional hip space. The grill was made from aluminum, and the foot rest to seat distance is significantly more than traditional becaks in order to lower the step and increase leg room.
+          .boxed
+            img(src='images/IMG_6095.jpg', width='300px', alt='').third-col
+            img(src='images/IMG_6102.jpg', width='300px', alt='').third-col
+            img(src='images/IMG_6099.jpg', width='300px', alt='').third-col
+
+      artical.pg13
+        .boxed
+          img(src='images/IMG_6043.jpg', width='450px', alt='').half-col
+          img(src='images/IMG_6089.jpg', width='450px', alt='').half-col
+        .inner
+          p.
+            The seat is my favorite part of the becak. My hope is that people see the becak and are drawn to sit in it and touch the materials, not just take a photo. When I saw the red leather hides spread out on the floor in front of me I knew it would be a bold choice but I wanted to make it work. The color was a bit too intense but would be darkened by burning a pattern into the leather. The design was inspired by a form of batik on wood from the village of Krebet, south of Jogja. The leaves were cut out exposing green leather backing. The diagonal background pattern is known as Parang, traditionally worn only by princesses. The characteristic curved lines of the Parang resemble ocean waves, symbolizing the continuity and persistence of the sea. 
+
+      artical.pg14
+        .boxed
+          img(src='images/IMG_6234.jpg', width='300px', alt='').third-col
+          img(src='images/IMG_6228.jpg', width='300px', alt='').third-col
+          img(src='images/IMG_6285.jpg', width='300px', alt='').third-col
+
+      .pg15
+        .parallax
+          .image
+        
+  
+  script(src="https://code.jquery.com/jquery-2.2.4.min.js", integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=", crossorigin="anonymous")
+  
+  script(src='/js/jquery.parallax-scroll-min.js')
+  script.
+    /* 
+    $(function() {
+      $(".bg-holder").parallaxScroll({
+        friction: 0.5,
+        direction: "vertical"
+      });
+    });
+     */
