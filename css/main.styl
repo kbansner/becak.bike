@@ -15,13 +15,17 @@ body
 //- start: Hero Unit
 .hero
   center(1024px)
+  margin-bottom: 30px
   height: 768px
   background: url(/images/hero/becak-lineup.jpg) center no-repeat
   background-size: cover
 
 .hero-cell
-  span(1/4, $cycle: 4)
+  //- span(1/4, $cycle: 4)
+  display: block
+  float: left
   height: 256px
+  width: 256px
   text-align: center
   box-sizing: border-box
   transition: opacity 0.5s ease-in-out
@@ -52,8 +56,15 @@ $hero-border = 6px
   background-size: cover
   opacity: 0
 
+.hero-cell:nth-child(12)
+  border-width: $hero-border 0 0 $hero-border
+  background: url(/images/hero/arie-becak.jpg) center no-repeat
+  background-size: cover
+  opacity: 0
+
 .hero:hover > .hero-cell:nth-child(4)
 .hero:hover > .hero-cell:nth-child(5)
+.hero:hover > .hero-cell:nth-child(12)
   opacity: 1.0
 
 .hero:hover > .hero-cell:nth-child(10)
@@ -185,7 +196,7 @@ artical
 
 .pg12
   .parallax
-    height: 700px
+    height: 710px
   .image
     top: -30px
     height: 731px
@@ -198,6 +209,30 @@ artical
     top: -30px
     height: 792px
     background: url('/images/IMG_6314.jpg')
+
+.pg16
+  .parallax
+    height: 720px
+  .image
+    top: -30px
+    height: 768px
+    background: url('/images/IMG_5524.jpg')
+
+.pg17
+  .parallax
+    height: 790px
+  .image
+    top: -30px
+    height: 811px
+    background: url('/images/IMG_4856.jpg')
+
+.pg19
+  .parallax
+    height: 730px
+  .image
+    top: -30px
+    height: 760px
+    background: url('/images/IMG_6417.jpg')
 //- end: parallax section
 
 //- start: Pages custom css
@@ -230,6 +265,6 @@ artical
     background: url(/images/grill.png) bottom no-repeat
     background-size: 110%
 
-.pg13
+.pg13 artical
   background: url(/images/seat-backrest.png) bottom no-repeat
   background-size: cover
