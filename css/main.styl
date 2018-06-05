@@ -6,13 +6,8 @@ html
   font-family: georgia,'times new roman',times,serif
 
 body
-  background-color: #aaa
+  // background-color: #aaa
 
-// .paper
-//   center(1024px)
-//   position: relative
-//   background-color: white
-//   z-index: 0
 //- start: Hero Unit
 .hero
   center(1024px)
@@ -108,6 +103,11 @@ artical
     center(740px)
     padding-top: 2rem
     padding-bottom: 2rem
+    & + .inner
+    & + .boxed
+      padding-top: 0
+    .boxed
+      padding-bottom: 0
 
   $boxed-border = 10px
   .boxed
@@ -120,6 +120,8 @@ artical
       border: $boxed-border solid #666
     img+img
       margin-left: (-1 * $boxed-border)
+    & + .inner
+      padding-top: 0
 
 .half-col
   float: left
@@ -130,6 +132,13 @@ artical
   float: left
   width: 33.3%
   box-sizing: border-box
+
+figure
+  margin: .2rem 0
+  font-size: 0.8rem
+  line-height: 1.6
+  color: #666
+  background-color: white
 
 //- start: parallax section
 .main
@@ -150,94 +159,102 @@ artical
   position: relative;
   display: block;
   background-color: white;
-  z-index: 1;
-
+  z-index: 1
 
 .parallax
   center(1024px)
   position: relative
-  height: 350px
-  .image
-    position: absolute
+  figure
+    margin-top: -5px
+  img
+    position: relative
     z-index: -2
     width: 1024px
-    transform: translateZ(-.2px) scale(1.2);
+    transform: translateZ(-.2px) scale(1.2)
+  .image
+    position: relative
+    z-index: -2
+    width: 1024px
+    transform: translateZ(-.2px) scale(1.2)
+    background-repeat: no-repeat
+    background-position: center
+    background-size: cover
+
 
 .pg3
   .parallax
-    height: 610px
-  .image
-    top: -20px
-    height: 666px
-    background: url('/images/IMG_0102.jpg')
+    height: 600px
+    .image
+      height: 610px
+      background-image: url('/images/IMG_0102.jpg')
 .pg4
   .parallax
     height: 650px
-  .image
-    top: -30px
-    height: 768px
-    background: url('/images/IMG_5547.jpg')
+    .image
+      // height: 768px
+      height: 650px
+      background: url('/images/IMG_5547.jpg')
 .pg6
   .parallax
     height: 650px
-  .image
-    top: -30px
-    height: 768px
-    background: url('/images/IMG_5818.jpg')
+    .image
+      top: -30px
+      height: 768px
+      background: url('/images/IMG_5818.jpg')
 .pg8
   .parallax
     height: 960px
-  .image
-    top: -30px
-    height: 1024px
-    background: url('/images/IMG_5921.jpg')
+    .image
+      top: -30px
+      height: 1024px
+      background: url('/images/IMG_5921.jpg')
 .pg10
   .parallax
     height: 960px
-  .image
-    top: -30px
-    height: 1024px
-    background: url('/images/IMG_6019.jpg')
+    .image
+      top: -30px
+      height: 1024px
+      background: url('/images/IMG_6019.jpg')
 
 .pg12
   .parallax
     height: 710px
-  .image
-    top: -30px
-    height: 731px
-    background: url('/images/IMG_6093.jpg')
+    .image
+      top: -30px
+      height: 731px
+      background: url('/images/IMG_6093.jpg')
 
 .pg16
   .parallax
-    height: 740px
-  .image
-    top: -30px
     height: 792px
-    background: url('/images/IMG_6314.jpg')
+    // .image
+    //   top: -30px
+    //   height: 792px
+    //   background: url('/images/IMG_6314.jpg')
 
 .pg17
   .parallax
     height: 720px
-  .image
-    top: -30px
-    height: 768px
-    background: url('/images/IMG_5524.jpg')
+    .image
+      top: -30px
+      height: 768px
+      background: url('/images/IMG_5524.jpg')
 
 .pg18
   .parallax
     height: 790px
-  .image
-    top: -30px
-    height: 811px
-    background: url('/images/IMG_4856.jpg')
+    .image
+      top: -30px
+      height: 811px
+      background: url('/images/IMG_4856.jpg')
 
 .pg20
   .parallax
     height: 730px
-  .image
-    top: -30px
-    height: 760px
-    background: url('/images/IMG_6417.jpg')
+    .image
+      top: -30px
+      height: 760px
+      background: url('/images/IMG_6417.jpg')
 //- end: parallax section
 
 //- start: Pages custom css
@@ -246,7 +263,7 @@ artical
   background: white url(/images/large/becak_all.jpg) no-repeat
   background-position: 5rem 12rem
 
-.pg2
+.pg2 > artical
   display: flex
   justify-content: center
   align-items: center
@@ -265,12 +282,12 @@ artical
   background: url(/images/cab-frame-side.png) bottom no-repeat
   background-size: cover
 
-.pg12 artical
+.pg12 > artical
   background-image: url(/images/grill.png)
   background-position: bottom
   background-size: 110%
 
-.pg14 artical
+.pg14 > artical
   background: url(/images/seat-backrest.png)
   background-position: bottom
   background-size: cover
