@@ -2,20 +2,21 @@
 
 edit()
 html
-  font-size: 18px
+  font-size: 19px
+  font-family: georgia,'times new roman',times,serif
 
 body
   background-color: #aaa
 
-.paper
-  center(1024px)
-  position: relative
-  background-color: white
-  z-index: 0
+// .paper
+//   center(1024px)
+//   position: relative
+//   background-color: white
+//   z-index: 0
 //- start: Hero Unit
 .hero
   center(1024px)
-  margin-bottom: 30px
+  margin-bottom: 10px
   height: 768px
   background: url(/images/hero/becak-lineup.jpg) center no-repeat
   background-size: cover
@@ -34,7 +35,8 @@ body
 .hero-cell:nth-child(7)
   background-color: white
   padding-top: 4.2rem
-  font: 400 2.2rem/1.4 sans-serif
+  font-size: 2.2rem
+  line-height: 1.4
   color: black
   opacity: 0
 
@@ -81,6 +83,7 @@ artical
   margin: 0 auto
   width: 1024px
   background-color: white
+  background-repeat: no-repeat
 
   img
     display: block
@@ -88,7 +91,7 @@ artical
 
   p
     margin-bottom: 1.5rem
-    font: 18px/24px tahoma
+    line-height: 1.2
 
   &.reverse
     display: flex
@@ -98,6 +101,8 @@ artical
     p
       margin-left: 3.5rem
       margin-right: 3.5rem
+      font-size: 0.95rem
+      line-height: 1.5
 
   .inner
     center(740px)
@@ -202,7 +207,7 @@ artical
     height: 731px
     background: url('/images/IMG_6093.jpg')
 
-.pg15
+.pg16
   .parallax
     height: 740px
   .image
@@ -210,7 +215,7 @@ artical
     height: 792px
     background: url('/images/IMG_6314.jpg')
 
-.pg16
+.pg17
   .parallax
     height: 720px
   .image
@@ -218,7 +223,7 @@ artical
     height: 768px
     background: url('/images/IMG_5524.jpg')
 
-.pg17
+.pg18
   .parallax
     height: 790px
   .image
@@ -226,7 +231,7 @@ artical
     height: 811px
     background: url('/images/IMG_4856.jpg')
 
-.pg19
+.pg20
   .parallax
     height: 730px
   .image
@@ -260,11 +265,12 @@ artical
   background: url(/images/cab-frame-side.png) bottom no-repeat
   background-size: cover
 
-.pg12
-  artical
-    background: url(/images/grill.png) bottom no-repeat
-    background-size: 110%
+.pg12 artical
+  background-image: url(/images/grill.png)
+  background-position: bottom
+  background-size: 110%
 
-.pg13 artical
-  background: url(/images/seat-backrest.png) bottom no-repeat
+.pg14 artical
+  background: url(/images/seat-backrest.png)
+  background-position: bottom
   background-size: cover
