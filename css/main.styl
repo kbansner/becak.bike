@@ -7,10 +7,31 @@ html
 
 body
   // background-color: #aaa
+header
+  center(1024px)
+  nav
+    clearfix()
+    padding: 15px
+    font-size: 0.8rem
+    .logo
+      display: block
+      float: left
+      width: 7rem
+      font-family: Tahoma, sans-serif
+    a
+      display: block
+      float: right
+      white-space: nowrap
+      font-family: Tahoma, sans-serif
+      margin-left: 2rem
+      color: #999
+      text-decoration: none
+    a:hover
+      color: black
 
 //- start: Hero Unit
 .hero
-  center(1024px)
+  // margin-top: 20px
   margin-bottom: 10px
   height: 768px
   background: url(/images/hero/becak-lineup.jpg) center no-repeat
@@ -149,16 +170,15 @@ figure
   overflow-x: hidden;
   overflow-y: scroll;
 
-.hero
-  position: relative;
-  // z-index: -1;
-  transform: translateZ(-1px) scale(2);
+header
+  position: relative
+  transform: translateZ(-1px) scale(2)
 
 .intro
 .parallax .inner
-  position: relative;
-  display: block;
-  background-color: white;
+  position: relative
+  display: block
+  background-color: white
   z-index: 1
 
 .parallax
@@ -291,3 +311,8 @@ figure
   background: url(/images/seat-backrest.png)
   background-position: bottom
   background-size: cover
+
+.pg22
+.pg23
+   picture
+     center(400px)

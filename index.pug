@@ -7,13 +7,19 @@ html
 
   body
     .main
-      .hero
-        - var n = 0;
-        while n < 12
-         .hero-cell
-          if n == 6
-            = 'Building a Becak'
-         - n++
+      header
+        nav
+          .logo Becak.Bike
+          a(href='#anchor') Contact Information
+          a(href='#anchor') Vendors
+          a(href='#anchor') Plans
+        .hero
+          - var n = 0;
+          while n < 12
+           .hero-cell
+            if n == 6
+              = 'Building a Becak'
+           - n++
 
       artical.intro
         .inner
@@ -201,6 +207,24 @@ html
               Kus with his parents in the becak outside their home and welding shop. 
               His mother served me many cups of tea while I waited and watched Kus at work. 
 
-          
+      .pg22
+        artical
+          picture
+            img(src='images/IMG_5538.jpg', width='400px', height='400px')
+            figure.
+              Arie working on a cardboard prototype of the backrest which his friend crafted from aged teakwood. 
+          .inner
+            p.
+              I was very lucky to meet and be guided by Arie Dyanto. When I started this project I wanted to just buy a good becak. When that wasn’t possible, Arie showed me how it could be made. It was a fascinating education in building a vehicle with so many different materials. He frustrated me sometimes when he proposed ideas which entailed yet more design work. They would rattle around in my head for days until I embraced and incorporated them. As a daily presence in his house, I’m sure I caused him to smoke more. 
+
+
+      .pg23
+        artical
+          picture
+            img(src='images/IMG_6438.jpg', width='400px', height='400px')
+          .inner
+            p.
+             It took me nearly four months to get my becak into this box.  It’s now been six weeks since I left the box in Jogja to travel via container ship to California.
+
   -/* script(src="https://code.jquery.com/jquery-2.2.4.min.js", integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=", crossorigin="anonymous") */
   
