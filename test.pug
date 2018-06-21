@@ -1,0 +1,34 @@
+doctype html
+html
+  head
+    link(href='/css/normalize-min.css', rel='stylesheet', type='text/css')
+    link(href='/css/scroll.css', rel='stylesheet', type='text/css')
+    title Scroll
+
+  body
+    .fluff me
+    #horizontal.
+      this is the intros
+    .fluff.
+      it
+    .fluff
+    
+    script(src="https://code.jquery.com/jquery-2.2.4.min.js", integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=", crossorigin="anonymous")
+
+    script(type='text/javascript').
+      $(document).ready(function () {
+        var $horizontal = $('#horizontal');
+        var bgPos = parseInt( $horizontal.css('backgroundPositionX') );
+
+        $(window).scroll(function () {
+            var s = $(this).scrollTop(),
+                t = $('#horizontal').offset().top,
+                c = $(this).height(),
+                shift = s - t;
+            if (shift > 0 && shift < 800) {
+              $horizontal.css({
+                  'backgroundPositionX': bgPos - shift
+              });              
+            }
+        });
+      });
