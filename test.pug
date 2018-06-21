@@ -22,7 +22,7 @@ html
 
         $(window).scroll(function () {
             var s = $(this).scrollTop(),
-                t = $('#horizontal').offset().top,
+                t = $horizontal.offset().top,
                 c = $(this).height(),
                 shift = s - t;
             if (shift > 0 && shift < 800) {

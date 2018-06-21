@@ -2,7 +2,6 @@ include includes/mixins.pug
 
 doctype html
 html
-
   include includes/head.pug
 
   body
@@ -21,7 +20,7 @@ html
               = 'Building a Becak'
            - n++
 
-      artical.intro
+      artical.intro#horizontal
         .inner
           p.heading.
            I came to Jogja in November 2017 to build a becak to ride in San Francisco. I knew it would need good brakes and gears for the hills and, since the cost of shipping would be high, I wanted a becak that would justify the expense. 
@@ -31,13 +30,14 @@ html
            Rather than a modifying a factory built bike, it looked as though I needed to build a custom becak. Arie, the translator at the becak factory where we met, happened to be an artist/bike aficionado: we set out to find a good welder.
 
       artical.reverse.pg1
-        .half-col
-          p.
-           When building something custom you have to specify everything. Jogja is full of beautiful becaks and inspiring art. So, I went around with a tape measure, a camera, and the Sketch app, documenting murals, handicrafts and the most interesting becaks I came across.
-          p.
-           In 2014, another foreigner, Scott Thompson, built a custom becak to ride across Sumatra for charity, and incidentally, logged the record for distance on a becak. His bike had disc breaks, gears and a rear frame made of Chromoly steel. The builder of the rear frame, in Malang, had the old plans and access to good steel tubes. I ordered a frame like Scott’s but more curvy and upright, and I had the head tube angled forward so the frame would tilt to the inside when cornering.
-        .half-col
+        picture
+          source(srcset='images/IMG_5370.jpg', media='(max-width: 900px)')
           img(src='images/IMG_5370.jpg', width='512px', alt='')
+        p.
+         When building something custom you have to specify everything. Jogja is full of beautiful becaks and inspiring art. So, I went around with a tape measure, a camera, and the Sketch app, documenting murals, handicrafts and the most interesting becaks I came across.
+        p.
+         In 2014, another foreigner, Scott Thompson, built a custom becak to ride across Sumatra for charity, and incidentally, logged the record for distance on a becak. His bike had disc breaks, gears and a rear frame made of Chromoly steel. The builder of the rear frame, in Malang, had the old plans and access to good steel tubes. I ordered a frame like Scott’s but more curvy and upright, and I had the head tube angled forward so the frame would tilt to the inside when cornering.
+        -/* .half-col */
 
       .pg2
         artical
@@ -48,6 +48,7 @@ html
       .pg3
         .parallax
           picture
+            source(srcset='images/IMG_5547.jpg', media='(max-width: 900px)')
             img(src='images/IMG_0102.jpg', width='1024px', height='610', alt='')
             figure The rear frame Kus built for the becak
         artical
@@ -219,5 +220,26 @@ html
             p.
              It took me nearly four months to get my becak into this box.  It’s now been six weeks since I left the box in Jogja to travel via container ship to California.
 
-  -/* script(src="https://code.jquery.com/jquery-2.2.4.min.js", integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=", crossorigin="anonymous") */
-  
+    script(src="https://code.jquery.com/jquery-2.2.4.min.js", integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=", crossorigin="anonymous")
+
+    script(type='text/javascript').
+      $(document).ready(function () {
+        var $horizontal = $('#horizontal');
+        var bgPos = parseInt( $horizontal.css('backgroundPositionX') );
+        console.log('ready', bgPos)
+        $('.main').scroll(function () {
+          console.log('scroll')
+          var s = $(this).scrollTop(),
+              t = $horizontal.offset().top,
+              c = $(this).height(),
+              shift = s - t;
+
+          console.log('shift',shift, bgPos)
+
+          if (shift > 0 && shift < 2000) {
+            $horizontal.css({
+                'backgroundPositionX': bgPos - shift
+            });
+          }
+        });
+      });
