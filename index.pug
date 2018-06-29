@@ -5,7 +5,7 @@ html
   include includes/head.pug
 
   body
-    .main
+    #main
       header
         nav
           .logo Becak.Bike
@@ -223,7 +223,7 @@ html
         var $horizontal = $('#horizontal');
         var bgPos = parseInt( $horizontal.css('backgroundPositionX') );
         console.log('ready', bgPos)
-        $('.main').scroll(function () {
+        $('#main').scroll(function () {
           console.log('scroll')
           var s = $(this).scrollTop(),
               t = $horizontal.offset().top,

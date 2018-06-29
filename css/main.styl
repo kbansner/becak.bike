@@ -1,11 +1,13 @@
 @import 'jeet'
 
+$breakpoint-page = 1024px
 $breakpoint-tablet = 768px
 $breakpoint-phone = 640px
 // Predefined Break-points
 $mediaMaxWidth = 1260px
 $mediaBp1Width = 960px
 $mediaMinWidth = 480px
+
 
 
 $breakpoints = (phone = '640px', tablet = '768px', desktop = '1024px') !default
@@ -116,7 +118,7 @@ artical
   clearfix()
   display: block
   margin: 0 auto
-  width: 1024px
+  //width: 1024px
   max-width: 100%
   background-color: white
   background-repeat: no-repeat
@@ -197,10 +199,6 @@ artical
   float: left
   width: 50%
   box-sizing: border-box
-  // @media(max-width: $breakpoint-tablet)
-  //   float: none
-  //   width: 100%
-
 
 .third-col
   float: left
@@ -220,13 +218,13 @@ figure
   background-color: white
 
 //- start: parallax section
-.main
-  // center(1024px)
-  perspective: 1px;
-  transform-style: preserve-3d;
-  height: 100vh;
-  overflow-x: hidden;
-  overflow-y: scroll;
+#main
+  perspective: 1px
+  transform-style: preserve-3d
+  height: 100vh
+  overflow-x: hidden
+  overflow-y: scroll
+  -webkit-overflow-scrolling: touch
 
 header
   position: relative
@@ -243,22 +241,31 @@ header
   position: relative
   margin: 0 auto
   max-width: 1024px
-  figure
-    margin-top: -5px
-  img
-    position: relative
-    z-index: -2
-    width: 1024px
-    transform: translateZ(-.2px) scale(1.2)
-  .image
-    position: relative
-    z-index: -2
-    max-width: 1024px
-    transform: translateZ(-.2px) scale(1.2)
-    background-repeat: no-repeat
-    background-position: center
-    background-size: cover
+  picture
+    figure
+      margin-top: -5px
+    source
+    img
+      position: relative
+      z-index: -2
+      width: 1024px
+      transform: translateZ(-.2px) scale(1.2)
+      @media(max-width: $breakpoint-page)
+        height: 70vw
+        width: 100vw
+        outline: 1px dotted red
+    .image
+      position: relative
+      z-index: -2
+      max-width: 1024px
+      transform: translateZ(-.2px) scale(1.2)
+      background-repeat: no-repeat
+      background-position: center
+      background-size: cover
 
+@media(max-width: $breakpoint-page)
+  html>body #main .parallax
+    height: 70vw
 
 .pg3
   .parallax
