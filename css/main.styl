@@ -1,6 +1,7 @@
 @import 'jeet'
 
 $breakpoint-tablet = 768px
+$breakpoint-phone = 640px
 // Predefined Break-points
 $mediaMaxWidth = 1260px
 $mediaBp1Width = 960px
@@ -8,7 +9,7 @@ $mediaMinWidth = 480px
 
 
 $breakpoints = (phone = '640px', tablet = '768px', desktop = '1024px') !default
-
+$v = $breakpoints(tablet)
 
 html
   font-size: 19px
@@ -137,28 +138,32 @@ artical
     padding-left: 3px
 
   &.reverse
-    // display: flex
-    // align-items: center
-    padding: 1rem
-    background-color: black
+    padding: 1rem 2rem
+    background: black url(/images/pg1-reverse.jpg) right center no-repeat
+    background-size: contain
     color: white
 
-    picture
-      margin: -1rem -1rem -1rem 2rem
-      // padding-bottom: 1rem
-      // margin-left: 2rem
-      max-width: 50%
-      height: inherit
-      float: right
-      // object-fit: cover
-      // overflow: hidden
-
     p
-      margin-left: 3.5rem
-      margin-right: 3.5rem
+      margin-left: 2rem
+      margin-right: 48%
       font-size: 0.95rem
       line-height: 1.5
-      max-width: 380px
+      min-width: 320px
+      @media(max-width: $breakpoint-tablet)
+        margin-left: 0
+        font-size: 0.88rem
+
+  @media(max-width: $breakpoint-phone)
+    &.reverse
+      background: black url(/images/pg1-reverse-sm.jpg) top center no-repeat
+      background-size: contain
+      width: auto
+      p
+        margin-right: 0
+        // font-size: 14px
+        min-width: 0
+      p:first-child
+        margin-top: 102vw
 
   .inner
     center(740px)
