@@ -9,18 +9,20 @@ html
       header
         nav
           .logo Becak.Bike
-          a(href='#anchor') Contact Information
+          a(href='#anchor') Contact
           a(href='#anchor') Vendors
-          a(href='#anchor') Plans
+          a(href='#anchor') Drawings
+        
         .hero
-          - var n = 0;
-          while n < 12
-           .hero-cell
-            if n == 6
-              = 'Building a Becak'
-           - n++
-
-      artical.intro#horizontal
+          h1 Building a Becak
+          .hero-grid
+            #hero-becak1.hero-cell
+            #hero-becak2.hero-cell
+            #hero-becak3.hero-cell
+            #hero-becak4.hero-cell
+            #hero-blank-bottom.hero-cell
+              
+      artical.intro
         .inner
           p.heading.
            I came to Jogja in November 2017 to build a becak to ride in San Francisco. I knew it would need good brakes and gears for the hills and, since the cost of shipping would be high, I wanted a becak that would justify the expense. 
@@ -28,6 +30,8 @@ html
            A 250lb factory-built becak made from rebar and pipes wasn’t going to do it for me. New becaks, made to sell for $300, are primarily bought by hotels as lobby displays and the quality of the welds and steel has declined.
           p.
            Rather than a modifying a factory built bike, it looked as though I needed to build a custom becak. Arie, the translator at the becak factory where we met, happened to be an artist/bike aficionado: we set out to find a good welder.
+          
+          #horizontal
 
       artical.reverse.pg1
         p.
@@ -165,8 +169,7 @@ html
               Second, Arie painted a set of beautiful wild cockatoo wheel covers based on photographs I had taken on the Island of Seram in Maluku. 
             p.
               The third is polished metal which I plan to put lettering on when I know what type of tours I’ll be offering in San Francisco.
-            
-        
+
       .pg18
         .parallax
           picture
@@ -222,6 +225,7 @@ html
 
     script(type='text/javascript').
       $(document).ready(function () {
+        // Becak horizontal scroller
         var $horizontal = $('#horizontal');
         var bgPos = parseInt( $horizontal.css('backgroundPositionX') );
         console.log('ready', bgPos)
@@ -234,10 +238,22 @@ html
 
           console.log('shift',shift, bgPos)
 
-          if (shift > 0 && shift < 2500) {
+          if (shift > 0 && shift < 3500) {
             $horizontal.css({
-                'backgroundPositionX': bgPos - shift
+                'backgroundPositionX': (bgPos - shift)
             });
           }
         });
+        // Hero cells animation
+        var $cells = $('.hero-cell');
+        $('#main').scroll(function () {
+          var s = $(this).scrollTop();
+          if (s > 10) {
+            $cells.addClass('on');
+          }
+          else {
+            $cells.removeClass('on');
+          }
+        });        
+        
       });
