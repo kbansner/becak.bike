@@ -3,24 +3,21 @@
 $breakpoint-page = 1024px
 $breakpoint-tablet = 768px
 $breakpoint-phone = 640px
+$breakpoint-parallax = 1080px
 // Predefined Break-points
 $mediaMaxWidth = 1260px
 $mediaBp1Width = 960px
 $mediaMinWidth = 480px
 
-$breakpoints = (phone = '640px', tablet = '768px', desktop = '1024px') !default
-$v = $breakpoints(tablet)
-
-$hero-border = 6px
+$hero-border = 0.35rem
 
 html
   font-size: 19px
   font-family: Georgia,'times new roman',Times,serif
-  @media(max-width: $mediaBp1Width)
+  @media(max-width: $breakpoint-phone)
     font-size: 16px
 
 header
-  // center(1024px)
   max-width: 1024px
   margin: 0 auto
 
@@ -54,13 +51,163 @@ header
   box-sizing: border-box
 
   h1
+    padding: 0 2rem
     font-weight: normal
     text-align: center
+    box-sizing: border-box
+    color: black
 
+// Large Hero
+// @media(min-width: $mediaBp1Width)
+.hero
+  position: relative
+  margin-bottom: 10px
+  height: 768px
+  max-height: 80vw
+  background-image: url(/images/hero/becak-lineup.jpg)
+
+  .hero-grid
+    position: relative
+    height: 100%
+
+  h1
+  .hero-cell
+    position: absolute
+    height: 33%
+    width: 25%
+    transition: opacity 0.5s ease-in
+    border: 0 solid white
+
+  .hero-cell
+    opacity: 0
+
+  h1
+    top: 33%
+    left: 50%
+    margin: 0
+    background-color: white
+    padding-top: 4.2rem
+    font-size: 2.2rem
+    line-height: 1.4
+    opacity: 1
+
+  #hero-blank-bottom
+    top: 66%
+    left: 25%
+    background-color: white
+    opacity: .8
+
+  #hero-becak1
+    top: 33%
+    border-width: $hero-border $hero-border $hero-border 0
+    background-image: url(/images/hero/IMG_4773.jpg)
+
+  #hero-becak2
+    left: 75%
+    border-width: 0 0 $hero-border $hero-border
+    background-image: url(/images/hero/IMG_4784.jpg)
+
+  #hero-becak3
+    top: 66%
+    left: 75%
+    border-width: $hero-border 0 0 $hero-border
+    background-image: url(/images/hero/arie-becak.jpg)
+
+  #hero-becak4
+    border-width: 0 $hero-border $hero-border 0
+    background-image: url(/images/hero/_MG_6813.jpg)
+
+
+  &:hover #hero-blank-bottom
+  &:hover #hero-becak1
+  &:hover #hero-becak2
+  &:hover #hero-becak3
+    opacity: 1
+
+// Vertical Tablet Hero
+@media(min-width: $breakpoint-phone) and (max-width: $mediaBp1Width)
+  .hero
+    position: relative
+    width: auto
+    height: 500px
+    max-height: 65.1vw
+    background-image: url(/images/hero/hero-md.jpg)
+    background-color: black
+
+    .hero-cell
+      position: absolute
+      border: 0 solid white
+      transition: opacity 400ms ease-in
+      width: 33.33%
+      height: 50%
+      &.on
+        opacity: 1
+
+    #hero-becak1
+      top: 50%
+      border-width: $hero-border $hero-border 0 0
+
+    #hero-becak2
+      left: 66.6%
+      border-width: 0 0 $hero-border $hero-border
+      &.on
+        transition-delay: 300ms
+        transition-duration: 600
+
+    #hero-becak3
+      top: 50%
+      left: 66.6%
+      border-width: 0 0 0 $hero-border
+      &.on
+        transition-delay: 500ms
+        transition-duration: 300
+
+
+    #hero-becak4
+      background-image: url(/images/hero/_MG_6813.jpg)
+      border-width: 0 $hero-border 0 0
+      &.on
+        transition-delay: 700ms
+        transition-duration: 500
+
+
+    #hero-blank-bottom
+      visibility: hidden
+
+
+    h1
+      position: absolute
+      top: 25%
+      left: 33.33%
+      margin: 0
+      height: 50%
+      width: 33.33%
+      text-align: center
+      transition: opacity 0.5s ease-in
+      background-color: white
+      padding-top: 4.2rem
+      font-size: 2.2rem
+      line-height: 1.4
+      color: black
+      opacity: 0.85
+
+// Phone Hero
 @media(max-width: $breakpoint-phone)
   .hero
+    max-height: none
+    height: auto
+    background: none
     h1
+      position: relative
+      margin: 0
+      padding: 1rem
+      top: auto
+      left: auto
+      width: auto
+      height: auto
       font-size: 2rem
+      border: none
+      opacity: 1
 
     .hero-grid
       position: relative
@@ -79,13 +226,11 @@ header
 
     #hero-becak1
       top: 50vw
-      background-image: url(/images/hero/IMG_4773.jpg)
-      border-width: 0.2rem 0.2rem 0 0
+      border-width: $hero-border $hero-border 0 0
 
     #hero-becak2
       left: 50vw
-      background-image: url(/images/hero/IMG_4784.jpg)
-      border-width: 0 0 0.2rem 0.2rem
+      border-width: 0 0 $hero-border $hero-border
       &.on
         transition-delay: 300ms
         transition-duration: 600
@@ -93,134 +238,20 @@ header
     #hero-becak3
       left: 50vw
       top: 50vw
-      background-image: url(/images/hero/arie-becak.jpg)
-      border-width: 0.2rem 0 0 0.2rem
+      border-width: 0
       &.on
         transition-delay: 500ms
         transition-duration: 300
 
     #hero-becak4
       position: absolute
-      background-image: url(/images/hero/_MG_6813.jpg)
-      border-width: 0 0.2rem 0.2rem 0
+      border-width: 0
       &.on
         transition-delay: 700ms
         transition-duration: 500
 
-@media(min-width: $breakpoint-phone) and (max-width: $breakpoint-tablet)
-  .hero
-    position: relative
-    width: auto
-    height: 500px
-    max-height: 65.1vw
-    background-image: url(/images/hero/hero-md.jpg)
-
-  .hero-cell
-    position: absolute
-    border: 0 solid white
-    transition: opacity 400ms ease-in
-    width: 33.33%
-    height: 50%
-    opacity: 0
-    &.on
-      opacity: 1
-
-  #hero-becak1
-    top: 50%
-    background-image: url(/images/hero/IMG_4773.jpg)
-    border-width: 0.2rem 0.2rem 0 0
-
-  #hero-becak2
-    left: 66.6%
-    background-image: url(/images/hero/IMG_4784.jpg)
-    border-width: 0 0 0.2rem 0.2rem
-    &.on
-      transition-delay: 300ms
-      transition-duration: 600
-
-  h1
-    position: absolute
-    top: 25%
-    left: 33.33%
-    margin: 0
-    height: 50%
-    width: 33.33%
-    text-align: center
-    box-sizing: border-box
-    transition: opacity 0.5s ease-in
-    background-color: white
-    padding-top: 4.2rem
-    font-size: 2.2rem
-    line-height: 1.4
-    color: black
-    opacity: 1
-
-@media(min-width: $breakpoint-tablet)
-  .hero
-    position: relative
-    margin-bottom: 10px
-    height: 768px
-    max-height: 80vw
-    background-image: url(/images/hero/becak-lineup.jpg)
-
-  .hero-grid
-    position: relative
-    height: 100%
-
-  h1
-  .hero-cell
-    position: absolute
-    height: 33%
-    width: 25%
-    text-align: center
-    box-sizing: border-box
-    transition: opacity 0.5s ease-in
-    border: 0 solid white
-
-  h1
-    top: 33%
-    left: 50%
-    margin: 0
-    background-color: white
-    padding-top: 4.2rem
-    font-size: 2.2rem
-    line-height: 1.4
-    color: black
-    opacity: 1
-
-  #hero-blank-bottom.hero-cell
-    top: 66%
-    left: 25%
-    background-color: white
-    opacity: .8
-
-  #hero-becak1.hero-cell
-    top: 33%
-    border-width: $hero-border $hero-border $hero-border 0
-    background: url(/images/hero/IMG_4773.jpg) center no-repeat
-    background-size: cover
-    opacity: 0
-
-  #hero-becak2.hero-cell
-    left: 75%
-    border-width: 0 0 $hero-border $hero-border
-    background: url(/images/hero/IMG_4784.jpg) center no-repeat
-    background-size: cover
-    opacity: 0
-
-  #hero-becak3.hero-cell
-    top: 66%
-    left: 75%
-    border-width: $hero-border 0 0 $hero-border
-    background: url(/images/hero/arie-becak.jpg) center no-repeat
-    background-size: cover
-    opacity: 0
-
-  .hero:hover #hero-blank-bottom
-  .hero:hover #hero-becak1
-  .hero:hover #hero-becak2
-  .hero:hover #hero-becak3
-    opacity: 1
+    #hero-blank-bottom
+      visibility: hidden
 
 //- end: Hero Unit
 
@@ -259,13 +290,13 @@ artical
 
     p
       margin-left: 2rem
-      margin-right: 40%
+      margin-right: 50%
       font-size: 0.95rem
       line-height: 1.5
       min-width: 320px
       @media(max-width: $breakpoint-tablet)
         margin-left: 0
-        font-size: 0.88rem
+        font-size: 0.88rem  //make bigger for tablet vertical
 
   @media(max-width: $breakpoint-phone)
     &.reverse
@@ -330,14 +361,15 @@ figure
 
 //- start: parallax section
 #main
-  perspective: 1px
-  transform-style: preserve-3d
+  @media(min-width: $breakpoint-parallax)
+    perspective: 1px
+    transform-style: preserve-3d
   height: 100vh
   overflow-x: hidden
   overflow-y: scroll
   -webkit-overflow-scrolling: touch
 
-@media(min-width: $breakpoint-tablet)
+@media(min-width: $breakpoint-parallax)
   header
     position: relative
     transform: translateZ(-1px) scale(2)
@@ -387,10 +419,15 @@ figure
   display: flex
   justify-content: center
   align-items: center
-  height: 722px
+  max-height: 722px
+  height: 90vw
   background: url(/images/cab-frame-top.png) center no-repeat
   background-size: cover
+  picture
+    display: block
+    max-width: 50%
   img
+    box-sizing: border-box
     border: .9rem solid black
 
 .pg7
