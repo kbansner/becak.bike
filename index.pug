@@ -7,12 +7,7 @@ html
   body
     #main
       header
-        nav
-          .logo Becak.Bike
-          a(href='#anchor') Contact
-          a(href='#anchor') Vendors
-          a(href='#anchor') Drawings
-        
+        +navigation
         .hero
           h1 Building a Becak
           .hero-grid
@@ -22,25 +17,27 @@ html
             #hero-becak4.hero-cell
             #hero-blank-bottom.hero-cell
               
-      artical.intro
-        .inner
-          p.heading.
-           I came to Jogja in November 2017 to build a becak to ride in San Francisco. I knew it would need good brakes and gears for the hills and, since the cost of shipping would be high, I wanted a becak that would justify the expense. 
-          p.
-           A 250lb factory-built becak made from rebar and pipes wasn’t going to do it for me. New becaks, made to sell for $300, are primarily bought by hotels as lobby displays and the quality of the welds and steel has declined.
-          p.
-           Rather than a modifying a factory built bike, it looked as though I needed to build a custom becak. Arie, the translator at the becak factory where we met, happened to be an artist/bike aficionado: we set out to find a good welder.
-          
-          #horizontal
+      #intro
+        article
+          .inner
+            p.heading.
+             I came to Jogja in November 2017 to build a becak to ride in San Francisco. I knew it would need good brakes and gears for the hills and, since the cost of shipping would be high, I wanted a becak that would justify the expense. 
+            p.
+             A 250lb factory-built becak made from rebar and pipes wasn’t going to do it for me. New becaks, made to sell for $300, are primarily bought by hotels as lobby displays and the quality of the welds and steel has declined.
+            p.
+             Rather than a modifying a factory built bike, it looked as though I needed to build a custom becak. Arie, the translator at the becak factory where we met, happened to be an artist/bike aficionado: we set out to find a good welder.
+            
+            #horizontal
 
-      artical.reverse.pg1
-        p.
-         When building something custom you have to specify everything. Jogja is full of beautiful becaks and inspiring art. So, I went around with a tape measure, a camera, and the Sketch app, documenting murals, handicrafts and the most interesting becaks I came across.
-        p.
-         In 2014, another foreigner, Scott Thompson, built a custom becak to ride across Sumatra for charity, and incidentally, logged the record for distance on a becak. His bike had disc breaks, gears and a rear frame made of Chromoly steel. The builder of the rear frame, in Malang, had the old plans and access to good steel tubes. I ordered a frame like Scott’s but more curvy and upright, and I had the head tube angled forward so the frame would tilt to the inside when cornering.
+      .pg1
+        article
+          p.
+           When building something custom you have to specify everything. Jogja is full of beautiful becaks and inspiring art. So, I went around with a tape measure, a camera, and the Sketch app, documenting murals, handicrafts and the most interesting becaks I came across.
+          p.
+           In 2014, another foreigner, Scott Thompson, built a custom becak to ride across Sumatra for charity, and incidentally, logged the record for distance on a becak. His bike had disc breaks, gears and a rear frame made of Chromoly steel. The builder of the rear frame, in Malang, had the old plans and access to good steel tubes. I ordered a frame like Scott’s but more curvy and upright, and I had the head tube angled forward so the frame would tilt to the inside when cornering.
 
       .pg2
-        artical
+        article
           picture
             img(src='images/IMG_5467.jpg', width='356px', alt='')
             figure Front cab of becak
@@ -51,7 +48,7 @@ html
             -// source(srcset='images/IMG_5547.jpg', media='(max-width: 900px)') // this works!
             img(src='images/IMG_0102.jpg', width='1024px', height='610', alt='')
             -//figure The rear frame Kus built for the becak
-        artical
+        article
           .inner
             p.heading.
              The welding shop we chose is a family business on the east edge of Jogja. The father welds gutters and roof supports, but his son Kus fixes anything people bring to him and is highly sought after by the biking community for his bike modifications.
@@ -63,87 +60,103 @@ html
           picture
             img(src='images/IMG_5547.jpg', width='1024px', height='650', alt='')
 
-        artical
+        article
           .inner
             p.
               Initially we thought about getting an old becak front end to take apart and copy, but Kus wanted drawings. Since we couldn’t find anyone to draw plans, I took that on. This gave me a critical role and made me a much keener observer of becaks than I would have been. The revisions never finished. There were always more details to draw or decorations to try out. 
 
-      artical.pg5
-        .boxed
-          img(src='images/IMG_5821.jpg', width='450px', alt='').half-col
-          img(src='images/IMG_5801.jpg', width='450px', alt='').half-col
-        .inner
-          p.heading.
-            The decorative steel arm rests which go all the way down along the edges of the passenger cab to the foot rest are normally made of solid steel rods and are very heavy. The newer becaks use thinner rods, but I liked the original gauge. We considered using aluminum to save weight but settled on tubular stainless steel for the straighter sections, with solid steel for the circles. Solid rod can be bent in a smaller radius. The bending and welding was a major task which took Kus well over a week.
+      .pg5
+        article
+          .boxed
+            picture.half-col
+              img(src='images/IMG_5821.jpg', width='450px', alt='')
+            picture.half-col
+              img(src='images/IMG_5801.jpg', width='450px', alt='')
+          .inner
+            p.heading.
+              The decorative steel arm rests which go all the way down along the edges of the passenger cab to the foot rest are normally made of solid steel rods and are very heavy. The newer becaks use thinner rods, but I liked the original gauge. We considered using aluminum to save weight but settled on tubular stainless steel for the straighter sections, with solid steel for the circles. Solid rod can be bent in a smaller radius. The bending and welding was a major task which took Kus well over a week.
 
       .pg6
         .parallax
           picture
             img(src='images/IMG_5818.jpg', width='1024px', height='768px', alt='')
 
-      artical.pg7
-        .boxed
-          img(src='images/IMG_4795.jpg', width='450px', alt='').half-col
-          img(src='images/IMG_0110.jpg', width='450px', alt='').half-col
-        .inner
-          p.heading.
-            Every region has its own style of becaks. The Jogja-style becak, with its big round wheel covers made from old oil drums, seems to be based on the avoidance of square shapes. All the Jogja becaks were made by just two companies, one of which is out of business and the other is struggling. I preferred the horizontal grill fins and curvy toe step of the defunct company.
+      .pg7.decorative
+        article
+          .boxed
+            picture.half-col
+              img(src='images/IMG_4795.jpg', width='450px', alt='')
+            picture.half-col
+              img(src='images/IMG_0110.jpg', width='450px', alt='')
+          .inner
+            p.heading.
+              Every region has its own style of becaks. The Jogja-style becak, with its big round wheel covers made from old oil drums, seems to be based on the avoidance of square shapes. All the Jogja becaks were made by just two companies, one of which is out of business and the other is struggling. I preferred the horizontal grill fins and curvy toe step of the defunct company.
+
       .pg8
         .parallax
           picture
             img(src='images/IMG_5921.jpg', width='1024px', height='1024px', alt='')
 
-      artical.pg9
-        .boxed
-          picture.half-col
-            img(src='images/IMG_5901.jpg', width='450px', alt='')
-            figure Laying out decorative steel tubing
-          picture.half-col
-            img(src='images/IMG_5911.jpg', width='450px', alt='')
-            figure Welding the arm rests
+      .pg9
+        article
+          .boxed
+            picture.half-col
+              img(src='images/IMG_5901.jpg', width='450px', alt='')
+              figure Laying out decorative steel tubing
+            picture.half-col
+              img(src='images/IMG_5911.jpg', width='450px', alt='')
+              figure Welding the arm rests
 
       .pg10
         .parallax
           picture
             img(src='images/IMG_6019.jpg', width='1024px', height='1024px', alt='')
 
-      artical.pg11
-        .boxed
-          picture.third-col
-            img(src='images/IMG_0099.jpg', width='300px', alt='')
-            figure Dropouts with disc brake mounts
-          picture.third-col
-            img(src='images/Q5A7060.jpg', width='300px', alt='')
-            figure Front brake cable splitter
-          picture.third-col
-            img(src='images/Q5A7064.jpg', width='300px', alt='')
-            figure Front disc brake mount
-        .inner
-          p.caption
-            | Kus’s artistic genius shows in the components he fashioned by hand. 
-            br/
-            | These are the kinds of details I had no idea how to design; Kus just made them work.
+      .pg11
+        article
+          .boxed
+            picture.third-col
+              img(src='images/IMG_0099.jpg', width='300px', alt='')
+              figure Dropouts with disc brake mounts
+            picture.third-col
+              img(src='images/Q5A7060.jpg', width='300px', alt='')
+              figure Front brake cable splitter
+            picture.third-col
+              img(src='images/Q5A7064.jpg', width='300px', alt='')
+              figure Front disc brake mount
+          .inner
+            p.caption
+              | Kus’s artistic genius shows in the components he fashioned by hand. 
+              br/
+              | These are the kinds of details I had no idea how to design; Kus just made them work.
       .pg12
         .parallax
           picture
             img(src='images/IMG_6093.jpg', width='1024px', height='731' alt='')
-        artical
+        article
+          .boxed
+            picture.half-col
+              img(src='images/IMG_6095.jpg', alt='')
+            -/* img(src='images/IMG_6102.jpg', width='300px', alt='').half-col */
+            picture.half-col
+              img(src='images/IMG_6099.jpg', alt='')
+
           .inner
             p.heading.
               A regular becak has sides fully paneled in flat teakwood and is barely wide enough for two westerners. We made the seating area a little wider by using thin aluminum panels at the back of the seat and sinking them out under the wheel covers to provide 6cm of additional hip space. The grill was made from aluminum, and the foot rest to seat distance is significantly more than traditional becaks in order to lower the step and increase leg room.
-          .boxed
-            img(src='images/IMG_6095.jpg', width='300px', alt='').half-col
-            -/* img(src='images/IMG_6102.jpg', width='300px', alt='').half-col */
-            img(src='images/IMG_6099.jpg', width='300px', alt='').half-col
 
       .pg14
-        artical
+        article
           .boxed
-            img(src='images/IMG_6089.jpg', width='250px', alt='').quarter-col
+            picture.quarter-col
+              img(src='images/IMG_6089.jpg', width='250px', alt='')
             -/* img(src='images/IMG_6043.jpg', width='250px', alt='').quarter-col */
-            img(src='images/IMG_6228.jpg', width='250px', alt='').quarter-col
-            img(src='images/IMG_6234.jpg', width='250px', alt='').quarter-col
-            img(src='images/IMG_6285.jpg', width='250px', alt='').quarter-col
+            picture.quarter-col
+              img(src='images/IMG_6228.jpg', width='250px', alt='')
+            picture.quarter-col
+              img(src='images/IMG_6234.jpg', width='250px', alt='')
+            picture.quarter-col
+              img(src='images/IMG_6285.jpg', width='250px', alt='')
 
           .inner
             p.heading.
@@ -155,11 +168,13 @@ html
         .parallax
           picture
             img(src='images/IMG_5524.jpg', width='1024px', height='768px', alt='')
-        artical
+        article
           .boxed
-            img(src='images/IMG_6105.jpg', width='450px', alt='').half-col
+            picture.half-col
+              img(src='images/IMG_6105.jpg', width='450px', alt='')
             -/* img(src='images/IMG_6104.jpg', width='450px', alt='').third-col */
-            img(src='images/IMG_6241.jpg', width='450px', alt='').half-col
+            picture.half-col
+              img(src='images/IMG_6241.jpg', width='450px', alt='')
           .inner
             p.heading.
               The wheel covers are where a becak can promote its owner’s town or slogan or business. I bought three sets and had two of them painted. 
@@ -176,32 +191,37 @@ html
             img(src='images/IMG_4856.jpg', width='1024px', height='811px', alt='')
           
       .pg19
-        artical
+        article
           .boxed
-            img(src='images/IMG_6247.jpg', width='300px', alt='').third-col
-            img(src='images/IMG_6286.jpg', width='300px', alt='').third-col
-            img(src='images/IMG_6361.jpg', width='300px', alt='').third-col
+            picture.third-col
+              img(src='images/IMG_6247.jpg', width='300px', alt='')
+            picture.third-col
+              img(src='images/IMG_6286.jpg', width='300px', alt='')
+            picture.third-col
+              img(src='images/IMG_6361.jpg', width='300px', alt='')
           .inner
             p.heading.
               A collapsing canopy has a lot of moving parts to design and I wasn’t sure I’d need one in San Francisco. Then I pictured myself on a sunny day, snoozing in the shade of the canopy while waiting for a customer.
             p.
               Because the powder coating of the frame was finished, I choose to use stainless steel for the canopy which wouldn’t require paint. This entailed going to a different welder and polisher after Kus shaped the metal. The pre-bent rattan cross bars normally used wouldn’t work because my canopy was designed to fit a taller person. After countless trips between pipe vendor and pipe bender, I finally had three perfectly bent cross bars to rivet the waterproof covering on to.
           .boxed
-            img(src='images/IMG_6356.jpg', width='450px', alt='').half-col
-            img(src='images/IMG_6382.jpg', width='450px', alt='').half-col
+            picture.half-col
+              img(src='images/IMG_6356.jpg', width='450px', alt='')
+            picture.half-col
+              img(src='images/IMG_6382.jpg', width='450px', alt='')
 
       .pg20
         .parallax
           picture
             img(src='images/IMG_6417.jpg', width='1024px', height='760px', alt='')
-        artical
+        article
           .inner
             p.
               Kus with his parents in the becak outside their home and welding shop. 
               His mother served me many cups of tea while I waited and watched Kus at work. 
 
       .pg22
-        artical
+        article
           .boxed
             picture
               img(src='images/IMG_5538.jpg', width='400px', height='400px')
@@ -211,9 +231,8 @@ html
             p.heading.
               I was very lucky to meet and be guided by Arie Dyanto. When I started this project I wanted to just buy a good becak. When that wasn’t possible, Arie showed me how it could be made. It was a fascinating education in building a vehicle with so many different materials. He frustrated me sometimes when he proposed ideas which entailed yet more design work. They would rattle around in my head for days until I embraced and incorporated them. As a daily presence in his house, I’m sure I caused him to smoke more. 
 
-
       .pg23
-        artical
+        article
           .boxed
             picture
               img(src='images/IMG_6438.jpg', width='400px', height='400px')
@@ -221,6 +240,8 @@ html
             p.
              It took me nearly four months to get my becak into this box.  It’s now been six weeks since I left the box in Jogja to travel via container ship to California.
 
+      footer
+        a(href='javascript:$(\'#main\').scrollTop(0);') Back to top
     script(src="https://code.jquery.com/jquery-2.2.4.min.js", integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=", crossorigin="anonymous")
 
     script(type='text/javascript').
@@ -254,6 +275,6 @@ html
           else {
             $cells.removeClass('on');
           }
-        });        
+        });
         
       });

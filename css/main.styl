@@ -10,6 +10,7 @@ $mediaBp1Width = 960px
 $mediaMinWidth = 480px
 
 $hero-border = 0.35rem
+$boxed-border = 8px
 
 html
   font-size: 19px
@@ -114,15 +115,18 @@ header
     background-image: url(/images/hero/arie-becak.jpg)
 
   #hero-becak4
-    border-width: 0 $hero-border $hero-border 0
+    left: 25%
+    border-width: 0 $hero-border $hero-border $hero-border
     background-image: url(/images/hero/_MG_6813.jpg)
 
-
-  &:hover #hero-blank-bottom
-  &:hover #hero-becak1
-  &:hover #hero-becak2
-  &:hover #hero-becak3
-    opacity: 1
+  @media(min-width: $breakpoint-parallax)
+    &:hover #hero-becak1
+    &:hover #hero-becak2
+    &:hover #hero-becak3
+    &:hover #hero-becak4
+      opacity: 1
+    &:hover #hero-blank-bottom
+      opacity: 0.8
 
 // Vertical Tablet Hero
 @media(min-width: $breakpoint-phone) and (max-width: $mediaBp1Width)
@@ -162,8 +166,8 @@ header
         transition-delay: 500ms
         transition-duration: 300
 
-
     #hero-becak4
+      left: 0
       background-image: url(/images/hero/_MG_6813.jpg)
       border-width: 0 $hero-border 0 0
       &.on
@@ -173,7 +177,6 @@ header
 
     #hero-blank-bottom
       visibility: hidden
-
 
     h1
       position: absolute
@@ -244,7 +247,7 @@ header
         transition-duration: 300
 
     #hero-becak4
-      position: absolute
+      left: 0
       border-width: 0
       &.on
         transition-delay: 700ms
@@ -255,7 +258,7 @@ header
 
 //- end: Hero Unit
 
-artical
+article
   clearfix()
   display: block
   margin: 0 auto
@@ -281,34 +284,6 @@ artical
     padding-right: 8px
     padding-left: 3px
 
-  &.reverse
-    padding: 1rem 0 1rem 2rem
-    background: black url(/images/pg1-reverse.jpg) 100% 50% no-repeat
-    background-size: contain
-    color: white
-    box-sizing:content-box
-
-    p
-      margin-left: 2rem
-      margin-right: 50%
-      font-size: 0.95rem
-      line-height: 1.5
-      min-width: 320px
-      @media(max-width: $breakpoint-tablet)
-        margin-left: 0
-        font-size: 0.88rem  //make bigger for tablet vertical
-
-  @media(max-width: $breakpoint-phone)
-    &.reverse
-      background: black url(/images/pg1-reverse-sm.jpg) top center no-repeat
-      background-size: contain
-      width: auto
-      p
-        margin-right: 0
-        min-width: 0
-      p:first-child
-        margin-top: 102vw
-
   .inner
     center(740px)
     max-width: 80%
@@ -321,17 +296,17 @@ artical
     .boxed
       padding-bottom: 0
 
-  $boxed-border = 10px
   .boxed
     clearfix()
-    padding-top: 3rem
+    padding-top: 2rem
     padding-left: 3rem
     padding-right: 3rem
     padding-bottom: 2rem
     img
       border: $boxed-border solid #666
-    img+img
-      margin-left: (-1 * $boxed-border)
+      @media(max-width: $breakpoint-phone)
+        border: 5px solid #666
+
     & + .inner
       padding-top: 0
     figure
@@ -341,16 +316,45 @@ artical
   float: left
   width: 50%
   box-sizing: border-box
+  padding-left: (3 * $boxed-border)
+  padding-right: (3 * $boxed-border)
+  @media(max-width: $breakpoint-phone)
+    max-width: 450px
 
 .third-col
   float: left
   width: 33.3%
   box-sizing: border-box
+  padding-left: (3 * $boxed-border)
+  padding-right: (3 * $boxed-border)
+  @media(max-width: $breakpoint-phone)
+    max-width: 300px
 
 .quarter-col
   float: left
   width: 25%
   box-sizing: border-box
+  padding-left: (3 * $boxed-border)
+  padding-right: (3 * $boxed-border)
+  @media(max-width: $breakpoint-phone)
+    max-width: 300px
+
+@media(max-width: $breakpoint-phone)
+  .half-col
+  .third-col
+  .quarter-col
+    float: none
+    margin-top: (3 * $boxed-border)
+    margin-left: auto
+    margin-right: auto
+    width: 75%
+  .half-col:first-child
+  .third-col:first-child
+  .quarter-col:first-child
+    margin-top: 0
+
+picture
+  display: block
 
 figure
   margin: .25rem 0
@@ -374,7 +378,7 @@ figure
     position: relative
     transform: translateZ(-1px) scale(2)
 
-.intro
+#intro
 .parallax .inner
   position: relative
   display: block
@@ -390,10 +394,11 @@ figure
     source
     img
       position: relative
-      z-index: -2
       height: auto
       width: 100%
-      transform: translateZ(-.2px) scale(1.2)
+      @media(min-width: $breakpoint-parallax)
+        transform: translateZ(-.2px) scale(1.2)
+        z-index: -2
 
 //- end: parallax section
 
@@ -410,12 +415,39 @@ figure
     height: 38vw
     max-height: none
   // outline: 2px dotted blue
-.intro
+#intro
   padding: 1.5rem 0 0
   .inner
     padding-bottom: 0
 
-.pg2 > artical
+.pg1 > article
+  padding: 1rem 0 1rem 2rem
+  background: black url(/images/pg1-reverse.jpg) 100% 50% no-repeat
+  background-size: contain
+  color: white
+  box-sizing:content-box
+
+  p
+    margin-left: 2rem
+    margin-right: 50%
+    font-size: 0.95rem
+    line-height: 1.5
+    min-width: 320px
+    @media(max-width: $breakpoint-tablet)
+      margin-left: 0
+      font-size: 0.88rem  //make bigger for tablet vertical
+
+  @media(max-width: $breakpoint-phone)
+    background: black url(/images/pg1-reverse-sm.jpg) top center no-repeat
+    background-size: contain
+    width: auto
+    p
+      margin-right: 0
+      min-width: 0
+    p:first-child
+      margin-top: 102vw
+
+.pg2 > article
   display: flex
   justify-content: center
   align-items: center
@@ -431,25 +463,41 @@ figure
     border: .9rem solid black
 
 .pg7
-  padding-bottom: 7rem
-  background: white url(/images/toe-step.png) 0 97% no-repeat
-  background-size: contain
+  padding-bottom: 3rem
+  &.decorative:after
+    display: block
+    content: ''
+    background-size: contain
+    background: white url(/images/toe-step.png) center no-repeat
+    height: 13vw
 
 .pg11
   background: url(/images/cab-frame-side.png) bottom no-repeat
-  background-size: cover
+  background-size: contain
 
-.pg12 > artical
+.pg12 > article
   background-image: url(/images/grill.png)
   background-position: bottom
   background-size: 110%
 
-.pg14 > artical
+.pg14 > article
   background: url(/images/seat-backrest.png)
   background-position: bottom
-  background-size: cover
+  background-repeat: no-repeat
+  // background-size: cover
 
 .pg22
 .pg23
    picture
      center(400px)
+
+footer
+  a
+    display: block
+    margin: 1rem
+    text-align: center
+    font-family: Tahoma, sans-serif
+    font-size: 0.8rem
+    color: #666
+    text-transform: lowercase
+    text-decoration: none
