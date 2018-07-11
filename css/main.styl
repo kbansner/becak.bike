@@ -62,7 +62,8 @@ header
 // @media(min-width: $mediaBp1Width)
 .hero
   position: relative
-  margin-bottom: 10px
+  // margin-bottom: 10px
+  margin-bottom: -10px
   height: 768px
   max-height: 80vw
   background-image: url(/images/hero/becak-lineup.jpg)
@@ -81,22 +82,34 @@ header
 
   .hero-cell
     opacity: 0
+    &.on
+      opacity: 1
 
   h1
     top: 33%
     left: 50%
     margin: 0
     background-color: white
-    padding-top: 4.2rem
+    padding-top: 4rem
     font-size: 2.2rem
-    line-height: 1.4
-    opacity: 1
+    line-height: 1.2
+    opacity: 0.9
 
   #hero-blank-bottom
     top: 66%
     left: 25%
     background-color: white
-    opacity: .8
+    opacity: 0
+    &:after
+      display: block
+      top: 0
+      left: 0
+      height: 30%
+      padding-top: 40%
+      text-align: center
+      font-size: 55px
+      content: '\25BC'
+      opacity: 1
 
   #hero-becak1
     top: 33%
@@ -107,24 +120,28 @@ header
     left: 75%
     border-width: 0 0 $hero-border $hero-border
     background-image: url(/images/hero/IMG_4784.jpg)
+    &.on
+      transition-delay: 300ms
+      transition-duration: 600
 
   #hero-becak3
     top: 66%
     left: 75%
     border-width: $hero-border 0 0 $hero-border
     background-image: url(/images/hero/arie-becak.jpg)
+    &.on
+      transition-delay: 500ms
+      transition-duration: 300
 
   #hero-becak4
     left: 25%
     border-width: 0 $hero-border $hero-border $hero-border
     background-image: url(/images/hero/_MG_6813.jpg)
+    &.on
+      transition-delay: 700ms
+      transition-duration: 500
 
   @media(min-width: $breakpoint-parallax)
-    &:hover #hero-becak1
-    &:hover #hero-becak2
-    &:hover #hero-becak3
-    &:hover #hero-becak4
-      opacity: 1
     &:hover #hero-blank-bottom
       opacity: 0.8
 
@@ -144,8 +161,6 @@ header
       transition: opacity 400ms ease-in
       width: 33.33%
       height: 50%
-      &.on
-        opacity: 1
 
     #hero-becak1
       top: 50%
@@ -154,26 +169,16 @@ header
     #hero-becak2
       left: 66.6%
       border-width: 0 0 $hero-border $hero-border
-      &.on
-        transition-delay: 300ms
-        transition-duration: 600
 
     #hero-becak3
       top: 50%
       left: 66.6%
       border-width: 0 0 0 $hero-border
-      &.on
-        transition-delay: 500ms
-        transition-duration: 300
 
     #hero-becak4
       left: 0
       background-image: url(/images/hero/_MG_6813.jpg)
       border-width: 0 $hero-border 0 0
-      &.on
-        transition-delay: 700ms
-        transition-duration: 500
-
 
     #hero-blank-bottom
       visibility: hidden
@@ -234,24 +239,15 @@ header
     #hero-becak2
       left: 50vw
       border-width: 0 0 $hero-border $hero-border
-      &.on
-        transition-delay: 300ms
-        transition-duration: 600
 
     #hero-becak3
       left: 50vw
       top: 50vw
       border-width: 0
-      &.on
-        transition-delay: 500ms
-        transition-duration: 300
 
     #hero-becak4
       left: 0
       border-width: 0
-      &.on
-        transition-delay: 700ms
-        transition-duration: 500
 
     #hero-blank-bottom
       visibility: hidden
