@@ -338,7 +338,6 @@ article
 @media(max-width: $breakpoint-phone)
   .half-col
   .third-col
-  .quarter-col
     float: none
     margin-top: (3 * $boxed-border)
     margin-left: auto
@@ -346,8 +345,11 @@ article
     width: 75%
   .half-col:first-child
   .third-col:first-child
-  .quarter-col:first-child
     margin-top: 0
+
+  .quarter-col
+    margin-top: (3 * $boxed-border)
+    width: 50%
 
 picture
   display: block
