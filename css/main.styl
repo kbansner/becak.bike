@@ -1,16 +1,5 @@
 @import 'jeet'
-
-$breakpoint-page = 1024px
-$breakpoint-tablet = 768px
-$breakpoint-phone = 640px
-$breakpoint-parallax = 1080px
-// Predefined Break-points
-$mediaMaxWidth = 1260px
-$mediaBp1Width = 960px
-$mediaMinWidth = 480px
-
-$hero-border = 0.35rem
-$boxed-border = 8px
+@import 'vars'
 
 html
   font-size: 19px
@@ -26,11 +15,6 @@ header
     clearfix()
     padding: 15px
     font-size: 0.8rem
-    .logo
-      display: block
-      float: left
-      width: 7rem
-      font-family: Tahoma, sans-serif
     a
       display: block
       float: right
@@ -41,6 +25,12 @@ header
       text-decoration: none
     a:hover
       color: black
+    a.logo
+      display: block
+      float: left
+      margin-left: 0
+      width: 7rem
+      font-family: Tahoma, sans-serif
 
 //- start: Hero Unit
 .hero
@@ -67,6 +57,18 @@ header
   height: 768px
   max-height: 80vw
   background-image: url(/images/hero/becak-lineup.jpg)
+  &::after
+    position: absolute
+    content: ''
+    top: 0
+    left: 0
+    bottom: 0
+    right: 0
+    background-color: #eee
+    z-index: 1
+    transition: opacity 2s linear
+  &.loaded::after
+    opacity: 0
 
   .hero-grid
     position: relative
@@ -79,6 +81,7 @@ header
     width: 25%
     transition: opacity 0.5s ease-in
     border: 0 solid white
+    z-index: 2
 
   .hero-cell
     opacity: 0
@@ -461,13 +464,15 @@ figure
     border: .9rem solid black
 
 .pg7
-  padding-bottom: 3rem
+  padding-bottom: 4rem
   &.decorative:after
+    margin: -3rem auto 0
     display: block
-    content: ''
-    background-size: contain
-    background: white url(/images/toe-step.png) center no-repeat
     height: 13vw
+    max-width: 1024px
+    content: ''
+    background: white url(/images/toe-step.png) center no-repeat
+    background-size: contain
 
 .pg11
   background: url(/images/cab-frame-side.png) bottom no-repeat
