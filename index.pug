@@ -4,7 +4,7 @@ doctype html
 html
   include includes/head.pug
 
-  body
+  body#story
     #main
       header
         +navigation
@@ -245,24 +245,41 @@ html
     script(src="https://code.jquery.com/jquery-2.2.4.min.js", integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=", crossorigin="anonymous")
 
     script(type='text/javascript').
+    
+      /* $(window).scroll(function () {
+        var s = $(this).scrollTop(),
+            d = $(document).height(),
+            c = $(this).height();
+
+        scrollPercent = (s / (d - c));
+
+        var position = (scrollPercent * ($(document).width() - $horizontal.width())); */
+      
+      
       $(document).ready(function () {
         // Becak horizontal scroller
-        var $horizontal = $('#horizontal');
-        var bgPos = parseInt( $horizontal.css('backgroundPositionX') );
-        console.log('ready', bgPos)
+        var $horizontal = $('#horizontal'),
+          vh = $(window).height(),
+          ow = $horizontal.width(),
+          ratio = ow/vh,
+          hPos = ow;
+        /* console.log('ready', ratio, vh, ow) */
         $('#main').scroll(function () {
-          console.log('scroll')
-          var s = $(this).scrollTop(),
+          /* console.log('scroll') */
+          var s = $(this).scrollTop() + $horizontal.height(),
               t = $horizontal.offset().top,
-              c = $(this).height(),
-              shift = s - t;
+              shift = (s - t) * ratio;
 
-          console.log('shift',shift, bgPos)
+          /* console.log('shift',shift, hPos) */
 
-          if (shift > 0 && shift < 3500) {
+          if (s - t > 0 && shift < 2000) {
             $horizontal.css({
-                'backgroundPositionX': (bgPos - shift)
+                'visibility': 'visible',
+                'left': hPos - shift
             });
+          }
+          else {
+            $horizontal.css('visibility', 'hidden');
           }
         });
         // Hero cells animation

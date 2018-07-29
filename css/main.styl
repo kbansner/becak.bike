@@ -56,7 +56,6 @@ header
   margin-bottom: -10px
   height: 768px
   max-height: 80vw
-  background-image: url(/images/hero/becak-lineup.jpg)
   &::after
     position: absolute
     content: ''
@@ -147,6 +146,14 @@ header
   @media(min-width: $breakpoint-parallax)
     &:hover #hero-blank-bottom
       opacity: 0.8
+
+#story .hero
+  background-image: url(/images/hero/becak-lineup.jpg)
+#plans .hero
+  background-image: url(/images/hero/plans-lg.jpg)
+#contact .hero
+  background-image: url(/images/hero/contact-lg.jpg)
+
 
 // Vertical Tablet Hero
 @media(min-width: $breakpoint-phone) and (max-width: $mediaBp1Width)
@@ -405,19 +412,16 @@ figure
 
 //- start: Pages custom css
 #horizontal
-  background: white url(/images/large/becak_all.jpg) no-repeat
-  background-position: 70vw -3rem
-  height: 40vw
-  max-height: 21rem
-  background-size: 100%
+  position: relative
+  background: white url(/images/large/becak_all.jpg) center left no-repeat
+  height: 50vw
+  max-height: 20rem
+  background-size: cover
+  transition: left 5ms ease-in
   @media(max-width: $breakpoint-phone)
-    background-position-y: -2rem
-    background-position
-    height: 38vw
     max-height: none
-  // outline: 2px dotted blue
 #intro
-  padding: 1.5rem 0 0
+  padding: 1rem 0 0
   .inner
     padding-bottom: 0
 
@@ -480,8 +484,8 @@ figure
 
 .pg12 > article
   background-image: url(/images/grill.png)
-  background-position: bottom
-  background-size: 110%
+  background-position: top
+  background-size: cover
 
 .pg14 > article
   background: url(/images/seat-backrest.png)
@@ -497,7 +501,7 @@ figure
 footer
   a
     display: block
-    margin: 1rem
+    margin: 2rem
     text-align: center
     font-family: Tahoma, sans-serif
     font-size: 0.8rem
