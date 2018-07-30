@@ -1,6 +1,9 @@
-mixin navigation
+mixin link(href, name)
+  a(href=href+'.html')&attributes(attributes)= name
+
+mixin navigation(page)
   nav
-    a(href='/index.html').logo Becak.Bike
-    a(href='/contact.html') Contact Info
-    a(href='/plans.html') Becak Plans
-    a(href='/index.html') Tours
+    +link('index', 'Becak.bike')(class={'logo':true,'on':page == 'index'})
+    +link('contact', 'Contact Info')(class={'on':page == 'contact'})
+    +link('plans', 'Becak Plans')(class={'on':page == 'plans'})
+    +link('index', 'Tours')(class={'on':page == 'tours'})
