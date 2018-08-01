@@ -7,3 +7,16 @@ mixin navigation(page)
     +link('contact', 'Contact Info')(class={'on':page == 'contact'})
     +link('plans', 'Becak Plans')(class={'on':page == 'plans'})
     +link('index', 'Tours')(class={'on':page == 'tours'})
+
+mixin footer
+  footer
+    a(href='javascript:$(\'#main\').scrollTop(0);') Back to top
+
+mixin main-js
+  script(src="https://code.jquery.com/jquery-2.2.4.min.js", integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=", crossorigin="anonymous")
+
+  script(type='text/javascript').
+    $(document).ready(function () { 
+      $('#main').addClass('is-js');
+      setTimeout(function(){$('.hero').addClass('loaded')}, 1200); 
+    });

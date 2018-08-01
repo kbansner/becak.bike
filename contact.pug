@@ -17,9 +17,111 @@ html
             #hero-becak4.hero-cell
             #hero-blank-bottom.hero-cell
 
-  script(src="https://code.jquery.com/jquery-2.2.4.min.js", integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=", crossorigin="anonymous")
+      #intro
+        article
+          .doublemedia
+            .media
+              picture.img
+                -// source(srcset='images/IMG_5547.jpg', media='(max-width: 900px)') // this works!
+                img(src='images/contact/kai-bansner.jpg', width='140', height='140', alt='')
 
-  script(type='text/javascript').
-    $(document).ready(function () {
-      setTimeout(function(){$('.hero').addClass('loaded')}, 1200);
-    });
+              .bd
+                b Kai Bansner
+                div Becak Driver
+                +link('mailto:kai@becak.bike', 'kai@becak.bike')
+                div San Francisco, California
+  
+            .media
+              picture.img
+                -// source(srcset='images/IMG_5547.jpg', media='(max-width: 900px)') // this works!
+                img(src='images/contact/arie-dyanto.jpg', width='140', height='140', alt='')
+
+              .bd
+                b Arie Dyanto
+                div Bike Builder
+                +link('mailto:arie_dyanto@yahoo.com', 'arie_dyanto@yahoo.com')
+                div Yogyakarta, Indoneasia
+
+            .media
+              picture.img
+                img(src='images/contact/sinar-lout.jpg', width='140', height='140', alt='')
+
+              .bd
+                b Vanessa Yemima
+                div Sinar Lout Becak
+                +link('mailto:vanessayemima9@gmail.com', 'vanessayemima9@gmail.com')
+                div Yogyakarta, Indoneasia
+
+            .media
+              picture.img
+                img(src='images/contact/kus.jpg', width='140', height='140', alt='')
+
+              .bd
+                b Kus
+                div Welder
+                +link('mailto:', '')
+                div 
+
+            .media
+              picture.img
+                img(src='images/contact/stainless.jpg', width='140', height='140', alt='')
+
+              .bd
+                b Stainless
+                div 
+                +link('mailto:', '')
+                div 
+
+            .media
+              picture.img
+                img(src='images/contact/laser.jpg', width='140', height='140', alt='')
+
+              .bd
+                b Laser
+                div 
+                +link('mailto:', '')
+                div 
+
+            .media
+              picture.img
+                img(src='images/contact/upholstery.jpg', width='140', height='140', alt='')
+
+              .bd
+                b upholstery
+                div 
+                +link('mailto:', '')
+                div 
+
+            .media
+              picture.img
+                img(src='images/contact/yoni-arts.jpg', width='140', height='140', alt='')
+
+              .bd
+                b Yoni Arts
+                div 
+                +link('mailto:', '')
+                div 
+
+            .media
+              picture.img
+                img(src='images/contact/canopy.jpg', width='140', height='140', alt='')
+
+              .bd
+                b 
+                div 
+                +link('mailto:', '')
+                div 
+
+            .media
+              picture.img
+                img(src='images/contact/.jpg', width='140', height='140', alt='')
+
+              .bd
+                b 
+                div 
+                +link('mailto:', '')
+                div 
+
+  
+      +footer
+    +main-js

@@ -32,6 +32,9 @@ header
       margin-left: 0
       width: 7rem
       font-family: Tahoma, sans-serif
+      color: black
+    a.logo.on
+      text-transform: uppercase
 
 //- start: Hero Unit
 .hero
@@ -57,18 +60,6 @@ header
   margin-bottom: -10px
   height: 768px
   max-height: 80vw
-  &::after
-    position: absolute
-    content: ''
-    top: 0
-    left: 0
-    bottom: 0
-    right: 0
-    background-color: #eee
-    z-index: 1
-    transition: opacity 2s linear
-  &.loaded::after
-    opacity: 0
 
   .hero-grid
     position: relative
@@ -105,14 +96,10 @@ header
     opacity: 0
     &:after
       display: block
-      top: 0
-      left: 0
-      height: 30%
-      padding-top: 40%
-      text-align: center
-      font-size: 55px
-      content: '\25BC'
+      height: 100%
+      content: ''
       opacity: 1
+      background: url(/images/arrows.svg) center bottom no-repeat
 
   #hero-becak1
     top: 33%
@@ -155,6 +142,20 @@ header
 #contact .hero
   background-image: url(/images/hero/contact-lg.jpg)
 
+// hero fade in
+.is-js .hero
+  &::after
+    position: absolute
+    content: ''
+    top: 0
+    left: 0
+    bottom: 0
+    right: 0
+    background-color: #eee
+    z-index: 1
+    transition: opacity 2s linear
+  &.loaded::after
+    opacity: 0
 
 // Vertical Tablet Hero
 @media(min-width: $breakpoint-phone) and (max-width: $mediaBp1Width)
@@ -292,8 +293,7 @@ article
     padding-left: 3px
 
   .inner
-    center(740px)
-    max-width: 80%
+    center(80%)
     padding-top: 2rem
     padding-bottom: 2rem
 
@@ -509,3 +509,66 @@ footer
     color: #666
     text-transform: lowercase
     text-decoration: none
+
+dl.plan
+  clearfix()
+  dt
+    clear: left
+    float: left
+
+    display: block
+    margin-top: 2rem
+    margin-top: 2rem
+    font-size: 16px
+    line-height: 19px
+    width: 200px
+    // outline: 1px dotted blue
+
+  dd
+    float: left
+    display: block
+    margin-top: 2rem
+    margin-left: 0
+    // outline: 1px dotted green
+
+.download
+  font-family: Tahoma, sans-serif
+  // font-size: 0.7rem
+  font-size: 13px
+  color: #666
+  a
+    display: block
+    text-decoration: none
+    color: #333
+
+.media
+  overflow: hidden
+  _overflow: visible
+  zoom: 1
+  .img
+    float: left
+    display: block
+    margin-right: 30px
+    width: 140px
+    height: 140px
+  .bd
+    // font-family: Tahoma, sans-serif
+    font-size: 0.85rem
+    color: #666
+
+    overflow: hidden
+    _overflow: visible
+    zoom: 1
+
+.doublemedia
+  clearfix()
+  // margin: 0 30px
+  padding-top: 2rem
+  padding-bottom: 2rem
+  & > .media
+    float: left
+    margin-bottom: 30px
+    // padding-left: 20px
+    padding-right: 20px
+    width: 50%
+    box-sizing: border-box;
