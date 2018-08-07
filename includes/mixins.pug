@@ -1,12 +1,12 @@
 mixin link(href, name)
-  a(href=href+'.html')&attributes(attributes)= name
+  a(href=href)&attributes(attributes)= name
 
 mixin navigation(page)
   nav
-    +link('index', 'Becak.bike')(class={'logo':true,'on':page == 'index'})
-    +link('contact', 'Contact Info')(class={'on':page == 'contact'})
-    +link('plans', 'Becak Plans')(class={'on':page == 'plans'})
-    +link('index', 'Tours')(class={'on':page == 'tours'})
+    +link('index.html', 'Becak.bike')(class={'logo':true,'on':page == 'index'})
+    +link('contact.html', 'Contact Info')(class={'on':page == 'contact'})
+    +link('plans.html', 'Becak Plans')(class={'on':page == 'plans'})
+    +link('index.html', 'Tours')(class={'on':page == 'tours'})
 
 mixin footer
   footer
