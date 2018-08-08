@@ -19,4 +19,10 @@ mixin main-js
     $(document).ready(function () { 
       $('#main').addClass('is-js');
       setTimeout(function(){$('.hero').addClass('loaded')}, 1200); 
+      
+      $('#hero-blank-bottom').on('click', function(){
+        var y = $('#intro').offset().top;
+        $('#main').animate({scrollTop: (y-2) }, 1000, 'swing');
+      });
     });
+    
