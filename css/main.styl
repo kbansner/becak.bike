@@ -94,12 +94,18 @@ header
     left: 25%
     background-color: white
     opacity: 0
-    &:after
+    &::after
       display: block
       height: 100%
       content: ''
       opacity: 1
-      background: url(/images/arrows.svg) center bottom no-repeat
+      background: url(/images/arrows.svg) center 60% no-repeat
+      transition: background-position-y 300ms 3s ease-in
+    &:hover::after
+      background-position-y: 75%
+      background-size: 22%
+      cursor: s-resize
+      transition-delay: 0
 
   #hero-becak1
     top: 33%
