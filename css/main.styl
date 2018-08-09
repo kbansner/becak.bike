@@ -34,7 +34,7 @@ header
       font-family: Tahoma, sans-serif
       color: black
     a.logo.on
-      text-transform: uppercase
+      font-weight: bold
 
 //- start: Hero Unit
 .hero
@@ -56,8 +56,8 @@ header
 // @media(min-width: $mediaBp1Width)
 .hero
   position: relative
-  // margin-bottom: 10px
-  margin-bottom: -10px
+  // margin-bottom: -10px
+  height: 512px
   height: 768px
   max-height: 80vw
 
@@ -80,7 +80,8 @@ header
       opacity: 1
 
   h1
-    top: 33%
+    bottom: 50%
+    bottom: 33%
     left: 50%
     margin: 0
     background-color: white
@@ -90,6 +91,7 @@ header
     opacity: 0.9
 
   #hero-blank-bottom
+    top: 50%
     top: 66%
     left: 25%
     background-color: white
@@ -137,12 +139,18 @@ header
       transition-delay: 700ms
       transition-duration: 500
 
-  @media(min-width: $breakpoint-parallax)
+  @media(min-width: $mediaBp1Width)
     &:hover #hero-blank-bottom
       opacity: 0.8
 
 #story .hero
   background-image: url(/images/hero/becak-lineup.jpg)
+  height: 768px
+  h1
+    bottom: 33%
+  #hero-blank-bottom
+    top: 66%
+
 #plans .hero
   background-image: url(/images/hero/plans-lg.jpg)
 #contact .hero
@@ -170,13 +178,9 @@ header
     width: auto
     height: 500px
     max-height: 65.1vw
-    background-image: url(/images/hero/hero-md.jpg)
     background-color: black
 
     .hero-cell
-      position: absolute
-      border: 0 solid white
-      transition: opacity 400ms ease-in
       width: 33.33%
       height: 50%
 
@@ -204,6 +208,7 @@ header
     h1
       position: absolute
       top: 25%
+      bottom: auto !important
       left: 33.33%
       margin: 0
       height: 50%
@@ -217,12 +222,19 @@ header
       color: black
       opacity: 0.85
 
+  #story .hero
+    background-image: url(/images/hero/hero-md.jpg)
+  #plans .hero
+    background-image: url(/images/hero/plans-md.jpg)
+  #contact .hero
+    background-image: url(/images/hero/contact-md.jpg)
+
 // Phone Hero
 @media(max-width: $breakpoint-phone)
   .hero
     max-height: none
     height: auto
-    background: none
+    background-image: none !important
     h1
       position: relative
       margin: 0
@@ -237,8 +249,7 @@ header
 
     .hero-grid
       position: relative
-      height: 100vw
-      background-image: url(/images/hero/hero-sm.jpg)
+      height: 50vw
 
     .hero-cell
       position: absolute
@@ -269,6 +280,16 @@ header
 
     #hero-blank-bottom
       visibility: hidden
+
+  #story .hero-grid
+    background-image: url(/images/hero/hero-sm.jpg)
+    height: 100vw
+
+  #plans .hero-grid
+    background-image: url(/images/hero/plans-sm.jpg)
+
+  #contact .hero-grid
+    background-image: url(/images/hero/contact-sm.jpg)
 
 //- end: Hero Unit
 
@@ -342,8 +363,8 @@ article
   box-sizing: border-box
   padding-left: (3 * $boxed-border)
   padding-right: (3 * $boxed-border)
-  @media(max-width: $breakpoint-phone)
-    max-width: 450px
+  // @media(max-width: $breakpoint-phone)
+  //   max-width: 450px
 
 .third-col
   float: left
@@ -370,7 +391,6 @@ article
     margin-top: (3 * $boxed-border)
     margin-left: auto
     margin-right: auto
-    width: 75%
   .half-col:first-child
   .third-col:first-child
     margin-top: 0
@@ -378,6 +398,10 @@ article
   .quarter-col
     margin-top: (3 * $boxed-border)
     width: 50%
+
+  picture.half-col
+  picture.third-col
+    width: 75%
 
 picture
   display: block
@@ -577,15 +601,20 @@ dl.plan
     _overflow: visible
     zoom: 1
 
+  // Vertical Tablet Hero
+  @media(max-width: $mediaBp1Width)
+    width: 100%
+    max-width: none
+    .img
+      margin-right: 20px
+      width: 100px
+      height: 100px
+    .bd
+      font-size: 0.75rem
+
 .doublemedia
   clearfix()
-  // margin: 0 30px
   padding-top: 2rem
   padding-bottom: 2rem
   & > .media
-    float: left
     margin-bottom: 30px
-    // padding-left: 20px
-    padding-right: 20px
-    width: 50%
-    box-sizing: border-box;
