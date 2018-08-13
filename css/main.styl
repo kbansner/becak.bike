@@ -7,6 +7,17 @@ html
   @media(max-width: $breakpoint-phone)
     font-size: 16px
 
+
+#main
+  // scroll-snap-type: y proximity
+  overflow-y: scroll
+  overflow-x: hidden
+
+#main > .pg
+  position: relative
+  /* Snap align start. */
+  // scroll-snap-align: start
+
 header
   max-width: 1024px
   margin: 0 auto
@@ -56,8 +67,6 @@ header
 // @media(min-width: $mediaBp1Width)
 .hero
   position: relative
-  // margin-bottom: -10px
-  height: 512px
   height: 768px
   max-height: 80vw
 
@@ -68,31 +77,34 @@ header
   h1
   .hero-cell
     position: absolute
-    height: 33%
+    height: 33.33%
     width: 25%
-    transition: opacity 0.5s ease-in
+    transition: opacity 0.3s ease-in
     border: 0 solid white
     z-index: 2
 
+  &.on .hero-cell
+    opacity: 1
+
   .hero-cell
     opacity: 0
-    &.on
-      opacity: 1
 
   h1
-    bottom: 50%
-    bottom: 33%
+    // bottom: 50%
+    bottom: 33.33%
     left: 50%
     margin: 0
     background-color: white
     padding-top: 4rem
     font-size: 2.2rem
     line-height: 1.2
-    opacity: 0.9
+    opacity: 0.97
+
+  &.on h1
+    opacity: 0
 
   #hero-blank-bottom
-    top: 50%
-    top: 66%
+    top: 66.66%
     left: 25%
     background-color: white
     opacity: 0
@@ -110,46 +122,64 @@ header
       transition-delay: 0
 
   #hero-becak1
-    top: 33%
-    border-width: $hero-border $hero-border $hero-border 0
+    // top: 33.33%
+    top: 25%
+    border-right-width: $hero-border
     background-image: url(/images/hero/IMG_4773.jpg)
+  &.on #hero-becak1
+    transition-delay: 400ms
+    transition-duration: 500
 
   #hero-becak2
-    left: 75%
-    border-width: 0 0 $hero-border $hero-border
+    // left: 75%
+
+    left: 25%
+    // top: 33.33%
+    top: 50%
+
+    border-right-width: $hero-border
     background-image: url(/images/hero/IMG_4784.jpg)
-    &.on
-      transition-delay: 300ms
-      transition-duration: 600
+  &.on #hero-becak2
+    transition-delay: 600ms
+    transition-duration: 500
 
   #hero-becak3
-    top: 66%
-    left: 75%
-    border-width: $hero-border 0 0 $hero-border
+    // top: 66.66%
+    // left: 75%
+
+    top: 33.33%
+    left: 50%
+
+    border-right-width: $hero-border
     background-image: url(/images/hero/arie-becak.jpg)
-    &.on
-      transition-delay: 500ms
-      transition-duration: 300
+  &.on #hero-becak3
+    transition-delay: 800ms
+    transition-duration: 500
 
   #hero-becak4
-    left: 25%
-    border-width: 0 $hero-border $hero-border $hero-border
+    // left: 25%
+
+    top: 33.33%
+    top: 50%
+    left: 75%
+
     background-image: url(/images/hero/_MG_6813.jpg)
-    &.on
-      transition-delay: 700ms
+  &.on #hero-becak4
+      transition-delay: 1000ms
       transition-duration: 500
 
   @media(min-width: $mediaBp1Width)
     &:hover #hero-blank-bottom
-      opacity: 0.8
+      opacity: 0.97
+
+  &.on #hero-blank-bottom
+    opacity: 0
+
 
 #story .hero
   background-image: url(/images/hero/becak-lineup.jpg)
-  height: 768px
-  h1
-    bottom: 33%
   #hero-blank-bottom
-    top: 66%
+    top: 66.6%
 
 #plans .hero
   background-image: url(/images/hero/plans-lg.jpg)
@@ -167,9 +197,13 @@ header
     right: 0
     background-color: #eee
     z-index: 1
-    transition: opacity 2s linear
+    transition: opacity 1s linear
   &.loaded::after
     opacity: 0
+  &.on::after
+    opacity: 0.95
+    background-color: white
+    transition: opacity 10ms linear
 
 // Vertical Tablet Hero
 @media(min-width: $breakpoint-phone) and (max-width: $mediaBp1Width)
@@ -220,7 +254,7 @@ header
       font-size: 2.2rem
       line-height: 1.4
       color: black
-      opacity: 0.85
+      opacity: 1
 
   #story .hero
     background-image: url(/images/hero/hero-md.jpg)
@@ -245,7 +279,7 @@ header
       height: auto
       font-size: 2rem
       border: none
-      opacity: 1
+      opacity: 1 !important
 
     .hero-grid
       position: relative
@@ -266,6 +300,7 @@ header
       border-width: $hero-border $hero-border 0 0
 
     #hero-becak2
+      top: 0
       left: 50vw
       border-width: 0 0 $hero-border $hero-border
 
@@ -275,6 +310,7 @@ header
       border-width: 0
 
     #hero-becak4
+      top 0
       left: 0
       border-width: 0
 
@@ -368,7 +404,7 @@ article
 
 .third-col
   float: left
-  width: 33.3%
+  width: 33.33%
   box-sizing: border-box
   padding-left: (3 * $boxed-border)
   padding-right: (3 * $boxed-border)
@@ -468,7 +504,7 @@ figure
     padding-bottom: 0
 
 .pg1 > article
-  padding: 1rem 0 1rem 2rem
+  padding: 2rem 0 2rem 2rem
   background: black url(/images/pg1-reverse.jpg) 100% 50% no-repeat
   background-size: contain
   color: white
@@ -483,6 +519,12 @@ figure
     @media(max-width: $breakpoint-tablet)
       margin-left: 0
       font-size: 0.88rem  //make bigger for tablet vertical
+
+  @media(min-width: $breakpoint-page)
+    background-size: 56%
+    p
+      margin-right: 60%
+      font-size: 0.97rem
 
   @media(max-width: $breakpoint-phone)
     background: black url(/images/pg1-reverse-sm.jpg) top center no-repeat

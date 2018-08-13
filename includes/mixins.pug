@@ -21,8 +21,16 @@ mixin main-js
       setTimeout(function(){$('.hero').addClass('loaded')}, 1200); 
       
       $('#hero-blank-bottom').on('click', function(){
-        var y = $('#intro').offset().top;
-        $('#main').animate({scrollTop: (y-2) }, 1000, 'swing');
+        var delay = 100;
+        var $storyHero = $('#story .hero');
+        if ($storyHero.length) {
+          $storyHero.addClass('on');
+          delay = 1500
+        }
+        setTimeout(function(){
+          var y = $('#intro').offset().top;
+          $('#main').animate({scrollTop: (y-2) }, 1000, 'swing');          
+        }, delay);
       });
     });
     
