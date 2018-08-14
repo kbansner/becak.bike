@@ -57,7 +57,7 @@ header
   box-sizing: border-box
 
   h1
-    padding: 0 2rem
+    padding: 0
     font-weight: normal
     text-align: center
     box-sizing: border-box
@@ -77,10 +77,9 @@ header
   h1
   .hero-cell
     position: absolute
-    height: 33.33%
-    width: 25%
+    height: calc(33.33% - .35rem)
+    width: calc(25% - .35rem)
     transition: opacity 0.3s ease-in
-    border: 0 solid white
     z-index: 2
 
   &.on .hero-cell
@@ -90,15 +89,19 @@ header
     opacity: 0
 
   h1
-    // bottom: 50%
+    display: table
     bottom: 33.33%
     left: 50%
     margin: 0
     background-color: white
-    padding-top: 4rem
     font-size: 2.2rem
     line-height: 1.2
     opacity: 0.97
+    span
+      display: table-cell
+      vertical-align: middle
+      padding: 1rem
+
 
   &.on h1
     opacity: 0
@@ -122,33 +125,24 @@ header
       transition-delay: 0
 
   #hero-becak1
-    // top: 33.33%
     top: 25%
-    border-right-width: $hero-border
     background-image: url(/images/hero/IMG_4773.jpg)
   &.on #hero-becak1
     transition-delay: 400ms
     transition-duration: 500
 
   #hero-becak2
-    // left: 75%
-
-    left: 25%
-    // top: 33.33%
+    left: calc(25% + .35rem*.25)
     top: 50%
 
-    border-right-width: $hero-border
     background-image: url(/images/hero/IMG_4784.jpg)
   &.on #hero-becak2
     transition-delay: 600ms
     transition-duration: 500
 
   #hero-becak3
-    // top: 66.66%
-    // left: 75%
-
     top: 33.33%
-    left: 50%
+    left: calc(50% + .35rem*.5)
 
     border-right-width: $hero-border
     background-image: url(/images/hero/arie-becak.jpg)
@@ -157,12 +151,8 @@ header
     transition-duration: 500
 
   #hero-becak4
-    // left: 25%
-
-    top: 33.33%
     top: 50%
-    left: 75%
-
+    left: calc(75% + .35rem*.75)
     background-image: url(/images/hero/_MG_6813.jpg)
   &.on #hero-becak4
       transition-delay: 1000ms
@@ -201,7 +191,7 @@ header
   &.loaded::after
     opacity: 0
   &.on::after
-    opacity: 0.95
+    opacity: 0.9
     background-color: white
     transition: opacity 10ms linear
 
@@ -215,26 +205,7 @@ header
     background-color: black
 
     .hero-cell
-      width: 33.33%
-      height: 50%
-
-    #hero-becak1
-      top: 50%
-      border-width: $hero-border $hero-border 0 0
-
-    #hero-becak2
-      left: 66.6%
-      border-width: 0 0 $hero-border $hero-border
-
-    #hero-becak3
-      top: 50%
-      left: 66.6%
-      border-width: 0 0 0 $hero-border
-
-    #hero-becak4
-      left: 0
-      background-image: url(/images/hero/_MG_6813.jpg)
-      border-width: 0 $hero-border 0 0
+      height: calc(25vw - .35rem)
 
     #hero-blank-bottom
       visibility: hidden
@@ -245,12 +216,11 @@ header
       bottom: auto !important
       left: 33.33%
       margin: 0
-      height: 50%
-      width: 33.33%
+      height: 33vw
+      width: 33vw
       text-align: center
       transition: opacity 0.5s ease-in
       background-color: white
-      padding-top: 4.2rem
       font-size: 2.2rem
       line-height: 1.4
       color: black
@@ -271,8 +241,8 @@ header
     background-image: none !important
     h1
       position: relative
+      display: block
       margin: 0
-      padding: 1rem
       top: auto
       left: auto
       width: auto
@@ -280,7 +250,9 @@ header
       font-size: 2rem
       border: none
       opacity: 1 !important
-
+      span
+        display: inline-block
+        
     .hero-grid
       position: relative
       height: 50vw
@@ -524,15 +496,15 @@ figure
     background-size: 56%
     p
       margin-right: 60%
-      font-size: 0.97rem
 
   @media(max-width: $breakpoint-phone)
     background: black url(/images/pg1-reverse-sm.jpg) top center no-repeat
     background-size: contain
     width: auto
     p
-      margin-right: 0
+      margin-right: 2rem
       min-width: 0
+      font-size: 1rem
     p:first-child
       margin-top: 102vw
 

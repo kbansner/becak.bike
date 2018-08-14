@@ -9,7 +9,8 @@ html
       header
         +navigation('contact')
         .hero
-          h1 Contact Info
+          h1 
+            span Contact Info
           .hero-grid
             #hero-becak1.hero-cell
             #hero-becak2.hero-cell
@@ -62,6 +63,17 @@ html
                 div Bike Welder
                 a(href='phone:+62 896157744744', title='WhatsApp') WA: +62 896-1577-4744 
                 div 
+
+            .media.half-col
+              picture.img
+                img(src='images/contact/babah-bikes.png', width='140', height='140', alt='')
+
+              .bd
+                b Babah Bikes
+                div Chromoly Frame Builder
+                +link('http://babahbikes.com/', 'babahbikes.com')
+                div
+                  +link('https://goo.gl/maps/y9L3eALvPku', 'Malang, Indoneasia')(target='_blank', class='map-link', title='Map Location')
 
             .media.half-col
               picture.img
