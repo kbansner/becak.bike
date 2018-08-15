@@ -177,8 +177,7 @@ header
   background-image: url(/images/hero/contact-lg.jpg)
 
 // hero fade in
-.is-js .hero
-  &.hero-grid::after
+.is-js .hero .hero-grid::after
     position: absolute
     content: ''
     top: 0
@@ -188,10 +187,9 @@ header
     background-color: #eee
     z-index: 1
     transition: opacity 1s linear
-
+.is-js .hero
   &.loaded .hero-grid::after
     opacity: 0
-
   &.on .hero-grid::after
     opacity: 0.9
     background-color: white
@@ -333,6 +331,8 @@ article
   p
     margin-bottom: 1.5rem
     line-height: 1.2
+  p:last
+    margin-bottom: 0
 
   p.heading:first-letter
     float: left
@@ -451,7 +451,7 @@ figure
 
 .parallax
   position: relative
-  margin: 0 auto
+  margin: 1rem auto 0
   max-width: 1024px
   picture
     object-fit: cover
