@@ -3,7 +3,7 @@
 
 html
   font-size: 19px
-  font-family: Georgia,'times new roman',Times,serif
+  font-family: 'times new roman',Times,serif
   @media(max-width: $breakpoint-phone)
     font-size: 16px
 
@@ -100,7 +100,7 @@ header
     span
       display: table-cell
       vertical-align: middle
-      padding: 1rem
+      padding: 0 1rem .6rem
 
 
   &.on h1
@@ -178,7 +178,7 @@ header
 
 // hero fade in
 .is-js .hero
-  &::after
+  &.hero-grid::after
     position: absolute
     content: ''
     top: 0
@@ -188,9 +188,11 @@ header
     background-color: #eee
     z-index: 1
     transition: opacity 1s linear
-  &.loaded::after
+
+  &.loaded .hero-grid::after
     opacity: 0
-  &.on::after
+
+  &.on .hero-grid::after
     opacity: 0.9
     background-color: white
     transition: opacity 10ms linear
@@ -242,17 +244,19 @@ header
     h1
       position: relative
       display: block
-      margin: 0
+      margin: 0 auto
+      padding-top: 1.7rem
       top: auto
       left: auto
       width: auto
       height: auto
-      font-size: 2rem
-      border: none
+      max-width: 80%
+      font-size: 1.6rem
+      text-align: left
       opacity: 1 !important
       span
-        display: inline-block
-        
+        padding: 0
+
     .hero-grid
       position: relative
       height: 50vw
@@ -369,8 +373,6 @@ article
   float: left
   width: 50%
   box-sizing: border-box
-  padding-left: (3 * $boxed-border)
-  padding-right: (3 * $boxed-border)
   // @media(max-width: $breakpoint-phone)
   //   max-width: 450px
 
@@ -378,8 +380,6 @@ article
   float: left
   width: 33.33%
   box-sizing: border-box
-  padding-left: (3 * $boxed-border)
-  padding-right: (3 * $boxed-border)
   @media(max-width: $breakpoint-phone)
     max-width: 300px
 
@@ -387,10 +387,16 @@ article
   float: left
   width: 25%
   box-sizing: border-box
-  padding-left: (3 * $boxed-border)
-  padding-right: (3 * $boxed-border)
   @media(max-width: $breakpoint-phone)
     max-width: 300px
+
+picture.half-col
+picture.third-col
+picture.quarter-col
+  padding-left: (3 * $boxed-border)
+  padding-right: (3 * $boxed-border)
+  img
+    margin: 0 auto
 
 @media(max-width: $breakpoint-phone)
   .half-col
@@ -474,6 +480,8 @@ figure
   padding: 1rem 0 0
   .inner
     padding-bottom: 0
+  @media(max-width: $breakpoint-phone)
+    margin-top: -3rem
 
 .pg1 > article
   padding: 2rem 0 2rem 2rem
@@ -547,7 +555,6 @@ figure
   background: url(/images/seat-backrest.png)
   background-position: bottom
   background-repeat: no-repeat
-  // background-size: cover
 
 .pg22
 .pg23
@@ -557,7 +564,7 @@ figure
 footer
   a
     display: block
-    margin: 2rem
+    margin: 2rem 0 4rem
     text-align: center
     font-family: Tahoma, sans-serif
     font-size: 0.8rem
@@ -572,8 +579,7 @@ dl.plan
     float: left
 
     display: block
-    margin-top: 2rem
-    margin-top: 2rem
+    margin-bottom: 1rem
     font-size: 16px
     line-height: 19px
     width: 200px
@@ -582,7 +588,7 @@ dl.plan
   dd
     float: left
     display: block
-    margin-top: 2rem
+    margin-bottom: 3rem
     margin-left: 0
     // outline: 1px dotted green
 
@@ -618,6 +624,7 @@ dl.plan
   // Vertical Tablet Hero
   @media(max-width: $mediaBp1Width)
     width: 100%
+    padding-left: 0
     max-width: none
     .img
       margin-right: 20px
@@ -628,7 +635,9 @@ dl.plan
 
 .doublemedia
   clearfix()
-  padding-top: 2rem
+  margin: 0 auto
+  padding-top: 3rem
   padding-bottom: 2rem
+  max-width: 80%
   & > .media
     margin-bottom: 30px
