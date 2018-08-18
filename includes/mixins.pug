@@ -1,10 +1,20 @@
+mixin head(pageTitle)
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(href='/css/normalize-min.css', rel='stylesheet', type='text/css')
+    link(href='/css/main.css', rel='stylesheet', type='text/css')
+    title Becak.bike: 
+      =pageTitle
+
+
 mixin link(href, name)
   a(href=href)&attributes(attributes)= name
 
 mixin navigation(page)
   nav
     +link('index.html', 'Becak.bike')(class={'logo':true,'on':page == 'index'})
-    +link('contact.html', 'Contact Info')(class={'on':page == 'contact'})
+    +link('contact.html', 'Contact Resources')(class={'on':page == 'contact'})
     +link('plans.html', 'Becak Plans')(class={'on':page == 'plans'})
     -// +link('index.html', 'Tours')(class={'on':page == 'tours'})
 

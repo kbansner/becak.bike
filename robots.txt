@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: http://becak.bike/sitemap.txt

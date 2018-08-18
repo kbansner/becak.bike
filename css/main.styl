@@ -43,9 +43,11 @@ header
       margin-left: 0
       width: 7rem
       font-family: Tahoma, sans-serif
-      color: black
-    a.logo.on
       font-weight: bold
+    a:hover
+      text-decoration: underline
+    a.on:hover
+      text-decoration: none
 
 //- start: Hero Unit
 .hero
@@ -153,7 +155,7 @@ header
   #hero-becak4
     top: 50%
     left: calc(75% + .35rem*.75)
-    background-image: url(/images/hero/_MG_6813.jpg)
+    background-image: url(/images/hero/IMG_6813.jpg)
   &.on #hero-becak4
       transition-delay: 1000ms
       transition-duration: 500
@@ -329,10 +331,9 @@ article
     max-width: 100%
 
   p
-    margin-bottom: 1.5rem
     line-height: 1.2
-  p:last
-    margin-bottom: 0
+  p+p
+    margin-top: 1.5rem
 
   p.heading:first-letter
     float: left
@@ -360,7 +361,7 @@ article
     padding-right: 3rem
     padding-bottom: 2rem
     img
-      border: $boxed-border solid #666
+      border: 3px solid #111
       @media(max-width: $breakpoint-phone)
         border: 5px solid #666
 
@@ -469,7 +470,7 @@ figure
 //- start: Pages custom css
 #horizontal
   position: relative
-  background: white url(/images/large/becak-all.jpg) center left no-repeat
+  background: white url(/images/becak-all.jpg) center left no-repeat
   height: 50vw
   max-height: 20rem
   background-size: cover
@@ -522,7 +523,7 @@ figure
   align-items: center
   max-height: 722px
   height: 90vw
-  background: url(/images/cab-frame-top.png) center no-repeat
+  background: url(/images/backgrounds/cab-frame-top.png) center no-repeat
   background-size: cover
   picture
     display: block
@@ -539,22 +540,23 @@ figure
     height: 13vw
     max-width: 1024px
     content: ''
-    background: white url(/images/toe-step.png) center no-repeat
+    background: white url(/images/backgrounds/toe-step.png) center no-repeat
     background-size: contain
 
-.pg11
-  background: url(/images/cab-frame-side.png) bottom no-repeat
+.pg11 > article
+  background-image: url(/images/backgrounds/cab-frame-side.png)
+  background-position: bottom
+  // background-size: contain
+
+.pg13 > article
+  background-image: url(/images/backgrounds/grill.png)
+  background-position: top
   background-size: contain
 
-.pg12 > article
-  background-image: url(/images/grill.png)
-  background-position: top
-  background-size: cover
-
 .pg14 > article
-  background: url(/images/seat-backrest.png)
-  background-position: bottom
-  background-repeat: no-repeat
+  background-image: url(/images/backgrounds/flowers.png)
+  background-position: center
+  background-size: 100%
 
 .pg22
 .pg23

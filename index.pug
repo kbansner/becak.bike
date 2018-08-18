@@ -2,7 +2,7 @@ include includes/mixins.pug
 
 doctype html
 html
-  include includes/head.pug
+  +head('Building a custom becak')
 
   body#story
     #main
@@ -96,7 +96,7 @@ html
       .pg8.pg
         .parallax
           picture
-            img(src='images/IMG_5921.jpg', width='1024', height='1024', alt='')
+            img(src='images/IMG_5921.jpg', width='1024', height='768', alt='')
 
       .pg9.pg
         article
@@ -111,7 +111,7 @@ html
       .pg10.pg
         .parallax
           picture
-            img(src='images/IMG_6019.jpg', width='1024', height='1024', alt='')
+            img(src='images/IMG_6019.jpg', width='1024', height='768', alt='')
 
       .pg11.pg
         article
@@ -134,7 +134,8 @@ html
         .parallax
           picture
             img(src='images/IMG_6093.jpg', width='1024', height='731' alt='')
-      .pg
+
+      .pg13.pg
         article
           .boxed
             picture.half-col
@@ -191,7 +192,7 @@ html
       .pg18.pg
         .parallax
           picture
-            img(src='images/IMG_4856.jpg', width='1024', height='811', alt='')
+            img(src='images/IMG_4856.jpg', width='1024', height='768', alt='')
           
       .pg19.pg
         article
