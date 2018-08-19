@@ -28,7 +28,7 @@ mixin navigation(page)
 
 mixin footer
   footer
-    a(href='javascript:$(\'#main\').scrollTop(0);') Back to top
+    a.top(href='javascript:$(\'#main\').scrollTop(0);', title='Back to top') Top
 
 mixin main-js
   script(src="https://code.jquery.com/jquery-2.2.4.min.js", integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=", crossorigin="anonymous")

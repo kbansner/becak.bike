@@ -156,6 +156,7 @@ header
     top: 50%
     left: calc(75% + .35rem*.75)
     background-image: url(/images/hero/IMG_6813.jpg)
+    // background-image: url(/images/hero/IMG_5951.jpg)
   &.on #hero-becak4
       transition-delay: 1000ms
       transition-duration: 500
@@ -470,7 +471,7 @@ figure
 //- start: Pages custom css
 #horizontal
   position: relative
-  background: white url(/images/becak-all.jpg) center left no-repeat
+  background: white url(/images/backgrounds/becak-all.jpg) center left no-repeat
   height: 50vw
   max-height: 20rem
   background-size: cover
@@ -486,7 +487,7 @@ figure
 
 .pg1 > article
   padding: 2rem 0 2rem 2rem
-  background: black url(/images/pg1-reverse.jpg) 100% 50% no-repeat
+  background: black url(/images/story/pg1-reverse.jpg) 100% 50% no-repeat
   background-size: contain
   color: white
   box-sizing:content-box
@@ -507,7 +508,7 @@ figure
       margin-right: 60%
 
   @media(max-width: $breakpoint-phone)
-    background: black url(/images/pg1-reverse-sm.jpg) top center no-repeat
+    background: black url(/images/story/pg1-reverse-sm.jpg) top center no-repeat
     background-size: contain
     width: auto
     p
@@ -550,16 +551,17 @@ figure
 
 .pg13 > article
   background-image: url(/images/backgrounds/grill.png)
-  background-position: top
+  background-position: bottom
   background-size: contain
 
 .pg14 > article
   background-image: url(/images/backgrounds/flowers.png)
-  background-position: center
+  background-position: 50% 70%
   background-size: 100%
 
 .pg22
 .pg23
+.pg24
    picture
      center(400px)
 
@@ -643,3 +645,45 @@ dl.plan
   max-width: 80%
   & > .media
     margin-bottom: 30px
+
+
+.top
+  position: relative
+  display: block
+  margin: 4rem auto
+  width: 6rem
+  height: 1rem
+  text-align: center
+  // outline: 1px dotted blue
+
+.top::before
+  position absolute
+  left: 0
+  bottom: 0
+  width: 6rem
+  height: 5rem
+  content: ''
+
+.top::after
+  position absolute
+  left: 50%
+  margin-left: -15px
+  bottom: 1.5rem
+  // outline: 1px dotted red
+  width: 30px
+  height: 28px
+  background: url(/images/arrows.svg) 50% 26px repeat
+  background-size: 100%
+  transform: rotate(180deg)
+  opacity: 0.8
+  content: ''
+  // transform: backgroundPosition 1s linear
+
+.top:hover::after
+  animation: animatedBackground 2s linear infinite;
+
+@keyframes animatedBackground
+  from
+    background-position-y: 100%
+  to
+    background-position-y: 01px
