@@ -1,19 +1,19 @@
 mixin head(pageTitle)
-  head
-    meta(charset='utf-8')
-    meta(name='viewport', content='width=device-width, initial-scale=1')
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    script(async, src="https://www.googletagmanager.com/gtag/js?id=UA-50336213-2")
-    script.
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'UA-50336213-2');
+  meta(charset='utf-8')
+  meta(name='viewport', content='width=device-width, initial-scale=1')
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  script(async, src="https://www.googletagmanager.com/gtag/js?id=UA-50336213-2")
+  script.
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-50336213-2');
 
-    link(href='/css/normalize-min.css', rel='stylesheet', type='text/css')
-    link(href='/css/main.css', rel='stylesheet', type='text/css')
-    title Becak.bike: 
-      =pageTitle
+  link(href='/css/normalize-min.css', rel='stylesheet', type='text/css')
+  link(href='/css/main.css', rel='stylesheet', type='text/css')
+  title 
+    |Becak.bike: 
+    =pageTitle
 
 
 mixin link(href, name)
@@ -25,6 +25,18 @@ mixin navigation(page)
     +link('contact.html', 'Contact Resources')(class={'on':page == 'contact'})
     +link('plans.html', 'Becak Plans')(class={'on':page == 'plans'})
     -// +link('index.html', 'Tours')(class={'on':page == 'tours'})
+
+mixin hero(title)
+  .hero
+    .hero-grid
+      #hero-becak1.hero-cell
+      #hero-becak2.hero-cell
+      #hero-becak3.hero-cell
+      #hero-becak4.hero-cell
+      #hero-blank-bottom.hero-cell
+    h1 
+      span 
+        =title
 
 mixin footer
   footer

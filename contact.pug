@@ -2,21 +2,15 @@ include includes/mixins.pug
 
 doctype html
 html
-  +head('Conatact resources')
+  head
+    +head('Conatact resources')
+    meta(name="description", content="People and busninesses employed to build this Jogja style Becak")
 
   body#contact
     #main
       header
         +navigation('contact')
-        .hero
-          .hero-grid
-            #hero-becak1.hero-cell
-            #hero-becak2.hero-cell
-            #hero-becak3.hero-cell
-            #hero-becak4.hero-cell
-            #hero-blank-bottom.hero-cell
-          h1 
-            span Contact Resources
+        +hero('Contact Resources')
 
       #intro.pg
         article

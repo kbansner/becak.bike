@@ -2,21 +2,15 @@ include includes/mixins.pug
 
 doctype html
 html
-  +head('Free becak plans')
+  head
+    +head('Free becak plans')
+    meta(name="description", content="Plans for building a Jogja style Becak a.k.a. Pedicab or Rickshaw")
 
   body#plans
     #main
       header
         +navigation('plans')
-        .hero
-          .hero-grid
-            #hero-becak1.hero-cell
-            #hero-becak2.hero-cell
-            #hero-becak3.hero-cell
-            #hero-becak4.hero-cell
-            #hero-blank-bottom.hero-cell
-          h1 
-            span Becak Plans
+        +hero('Becak Plans')
 
       #intro.pg
         article
@@ -101,6 +95,96 @@ html
                 a(href='images/plans/downloads/above.pdf')
                   picture
                     img(src='images/plans/thumbnails/above-thumbnail.png', width='400', height='300', alt='')
+
+              dt
+                b Wood Seat Back Side
+                .download
+                  a(href='images/plans/downloads/wood-seat-back-side.pdf') wood-seat-back-side.pdf
+                  |version 1.0
+              dd
+                a(href='images/plans/downloads/wood-seat-back-side.pdf')
+                  picture
+                    img(src='images/plans/thumbnails/wood-seat-back-side-thumbnail.png', width='265', height='185', alt='')
+
+              dt
+                b Wood Seat Back
+                .download
+                  a(href='images/plans/downloads/wood-seat-back.pdf') wood-seat-back.pdf
+                  |version 1.0
+              dd
+                a(href='images/plans/downloads/wood-seat-back.pdf')
+                  picture
+                    img(src='images/plans/thumbnails/wood-seat-back-thumbnail.png', width='450', height='265', alt='')
+
+              dt
+                b Wood Floor &amp; Foot Box Side
+                .download
+                  a(href='images/plans/downloads/wood-floor+foot-box.pdf') wood-floor+foot-box.pdf
+                  |version 1.0
+              dd
+                a(href='images/plans/downloads/wood-floor+foot-box.pdf')
+                  picture
+                    img(src='images/plans/thumbnails/wood-floor+foot-box-thumbnail.png', width='350', height='175', alt='')
+
+              dt
+                b Cusion Seat Frame
+                .download
+                  a(href='images/plans/downloads/cusion-seat-frame.pdf') cusion-seat-frame.pdf
+                  |version 1.0
+              dd
+                a(href='images/plans/downloads/cusion-seat-frame.pdf')
+                  picture
+                    img(src='images/plans/thumbnails/cusion-seat-frame-thumbnail.png', width='265', height='175', alt='')
+
+              dt
+                b Seat Bottom Tabs
+                .download
+                  a(href='images/plans/downloads/seat-bottom-tabs.pdf') seat-bottom-tabs.pdf
+                  |version 1.0
+              dd
+                a(href='images/plans/downloads/seat-bottom-tabs.pdf')
+                  picture
+                    img(src='images/plans/thumbnails/seat-bottom-tabs-thumbnail.png', width='150', height='190', alt='')
+
+              dt
+                b Canopy Down
+                .download
+                  a(href='images/plans/downloads/canopy-down.pdf') canopy-down.pdf
+                  |version 1.0
+              dd
+                a(href='images/plans/downloads/canopy-down.pdf')
+                  picture
+                    img(src='images/plans/thumbnails/canopy-down-thumbnail.png', width='256', height='175', alt='')
+
+              dt
+                b Canopy up
+                .download
+                  a(href='images/plans/downloads/canopy-up.pdf') canopy-up.pdf
+                  |version 1.0
+              dd
+                a(href='images/plans/downloads/canopy-up.pdf')
+                  picture
+                    img(src='images/plans/thumbnails/canopy-up-thumbnail.png', width='256', height='175', alt='')
+
+              dt
+                b Canopy Heart
+                .download
+                  a(href='images/plans/downloads/canopy-heart.pdf') canopy-heart.pdf
+                  |version 1.0
+              dd
+                a(href='images/plans/downloads/canopy-heart.pdf')
+                  picture
+                    img(src='images/plans/thumbnails/canopy-heart-thumbnail.png', width='60', height='100', alt='')
+
+              dt
+                b Canopy Parts
+                .download
+                  a(href='images/plans/downloads/canopy-parts.pdf') canopy-parts.pdf
+                  |version 1.0
+              dd
+                a(href='images/plans/downloads/canopy-parts.pdf')
+                  picture
+                    img(src='images/plans/thumbnails/canopy-parts-thumbnail.png', width='160', height='100', alt='')
 
       +footer
     +main-js

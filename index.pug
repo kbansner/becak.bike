@@ -2,21 +2,16 @@ include includes/mixins.pug
 
 doctype html
 html
-  +head('Building a custom becak')
+  head
+    +head('Building a custom becak')
+    meta(name="description", content="An Indoneasian Becak built for San Franciso. How I designed and built a Jogja style pedicab in Java")
 
   body#story
     #main
       header
         +navigation('index')
-        .hero
-          .hero-grid
-            #hero-becak1.hero-cell
-            #hero-becak2.hero-cell
-            #hero-becak3.hero-cell
-            #hero-becak4.hero-cell
-            #hero-blank-bottom.hero-cell
-          h1 
-            span Building a Becak
+        +hero('Building a Becak')
+
 
       #intro.pg
         article
@@ -27,7 +22,7 @@ html
              A 250lb factory-built becak made from rebar and pipes wasn’t going to do it for me. New becaks, made to sell for $300, are primarily bought by hotels as lobby displays and the quality of the welds and steel has declined.
             p.
              Rather than a modifying a factory built bike, it looked as though I needed to build a custom becak. Arie, the translator at the becak factory where we met, happened to be an artist/bike aficionado: we set out to find a good welder.
-            
+
             #horizontal
 
       .pg1.pg
