@@ -22,7 +22,7 @@ mixin link(href, name)
 mixin navigation(page)
   nav
     +link('index.html', 'Becak.bike')(class={'logo':true,'on':page == 'index'})
-    +link('contact.html', 'Contact Resources')(class={'on':page == 'contact'})
+    +link('contact.html', 'Build Resources')(class={'on':page == 'contact'})
     +link('plans.html', 'Becak Plans')(class={'on':page == 'plans'})
     -// +link('index.html', 'Tours')(class={'on':page == 'tours'})
 
