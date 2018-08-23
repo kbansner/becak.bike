@@ -38,9 +38,15 @@ mixin hero(title)
       span 
         =title
 
-mixin footer
+mixin footer(page)
   footer
     a.top(href='javascript:$(\'#main\').scrollTop(0);', title='Back to top') Top
+    nav
+      +link('index.html', 'Story')(class={'logo':true,'on':page == 'index'})
+      +link('plans.html', 'Becak Plans')(class={'on':page == 'plans'})
+      +link('contact.html', 'Build Resources')(class={'on':page == 'contact'})
+      -//+link('faq.html', 'FAQ')(class={'on':page == 'faq'})
+
 
 mixin main-js
   script(src="https://code.jquery.com/jquery-2.2.4.min.js", integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=", crossorigin="anonymous")
@@ -62,5 +68,18 @@ mixin main-js
           $('#main').animate({scrollTop: (y-2) }, 1000, 'swing');          
         }, delay);
       });
+
+      // Hero cells animation
+      var $hero = $('.hero');
+      $('#main').scroll(function () {
+        var s = $(this).scrollTop();
+        if (s > 3) {
+          $hero.addClass('on');
+        }
+        else {
+          $hero.removeClass('on');
+        }
+      });
+
     });
     

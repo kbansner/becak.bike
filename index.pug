@@ -5,6 +5,10 @@ html
   head
     +head('Building a custom becak')
     meta(name="description", content="An Indonesian Becak built for San Franciso. How I designed and built a modern Jogja style Becak (pedicab)")
+    meta(property="og:title" content="Building a Jogja Style Becak")
+    meta(property="og:description" content="An Indonesian Becak built for San Franciso. How I designed and built a modern Jogja style Becak (pedicab)")
+    meta(property="og:image" content="http://becak.bike/images/story/IMG_5547.jpg")
+    meta(property="og:url" content="http://becak.bike")
 
   body#story
     #main
@@ -248,7 +252,7 @@ html
          .inner
            p And finally on the hilly streets of San Francisco. We are ready to start offering tours of the city.
       
-      +footer
+      +footer('index')
     +main-js
     script(type='text/javascript').
       $(document).ready(function () {
@@ -272,17 +276,6 @@ html
           }
           else {
             $horizontal.css('visibility', 'hidden');
-          }
-        });
-        // Hero cells animation
-        var $hero = $('.hero');
-        $('#main').scroll(function () {
-          var s = $(this).scrollTop();
-          if (s > 3) {
-            $hero.addClass('on');
-          }
-          else {
-            $hero.removeClass('on');
           }
         });
       });

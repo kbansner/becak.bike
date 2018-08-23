@@ -1,0 +1,37 @@
+include includes/mixins.pug
+
+doctype html
+html
+  head
+    +head('FAQs')
+    meta(name="description", content="")
+    meta(property="og:title" content="")
+    meta(property="og:description" content="")
+    meta(property="og:image" content="http://becak.bike/images/story/IMG_5547.jpg")
+    meta(property="og:url" content="http://becak.bike")
+
+  body#faq
+    #main
+      header
+        +navigation('faq')
+        +hero('FAQs')
+
+      #intro.pg
+        article
+          .doublemedia
+            .media.half-col
+              picture.img
+                -// source(srcset='images/IMG_5547.jpg', media='(max-width: 900px)') // this works!
+                img(src='images/contact/kai-pooh-garden.jpg', width='140', height='140', alt='Kai')
+
+              .bd
+                b Kai Bansner
+                div Becak Driver
+                +link('mailto:kai@becak.bike', 'kai@becak.bike')
+                div
+                  +link('https://goo.gl/maps/2g6HzhxWUeC2', 'Mission District, San Francisco')(target='map', class='map-link', title='Map Location')
+  
+
+  
+      +footer('faq')
+    +main-js

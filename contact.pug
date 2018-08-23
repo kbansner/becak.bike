@@ -4,7 +4,11 @@ doctype html
 html
   head
     +head('Build resources')
-    meta(name="description", content="People and busninesses employed to build this Jogja style Becak")
+    meta(name="description", content="Contact information for the people who made this Jogja style Becak")
+    meta(property="og:title" content="Builders of the Jogja style Becak")
+    meta(property="og:description" content="Contact information for the people who made this Indoneasian Pedicab")
+    meta(property="og:image" content="http://becak.bike/images/story/IMG_5547.jpg")
+    meta(property="og:url" content="http://becak.bike")
 
   body#contact
     #main
@@ -126,5 +130,5 @@ html
                   +link('https://goo.gl/maps/k5KnyZFJAz42', 'Yogyakarta, Indonesia')(target='map', class='map-link', title='Map Location')
 
   
-      +footer
+      +footer('contact')
     +main-js

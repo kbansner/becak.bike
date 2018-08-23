@@ -49,6 +49,24 @@ header
     a.on:hover
       text-decoration: none
 
+footer
+  nav
+    clearfix()
+    display: block
+    padding: 3rem
+    font-size: 0.8rem
+    background-color: black
+    a
+      display: block
+      margin-left: 2rem
+      float: left
+      color: white
+      white-space: nowrap
+      font-family: Tahoma, sans-serif
+      text-decoration: none
+    a.on
+      display: none
+
 //- start: Hero Unit
 .hero
 .hero-grid
@@ -84,9 +102,6 @@ header
     transition: opacity 0.3s ease-in
     z-index: 2
 
-  &.on .hero-cell
-    opacity: 1
-
   .hero-cell
     opacity: 0
 
@@ -103,10 +118,6 @@ header
       display: table-cell
       vertical-align: middle
       padding: 0 1rem .6rem
-
-
-  &.on h1
-    opacity: 0
 
   #hero-blank-bottom
     top: 66.66%
@@ -165,19 +176,28 @@ header
     &:hover #hero-blank-bottom
       opacity: 0.97
 
-  &.on #hero-blank-bottom
-    opacity: 0
+    &.on #hero-blank-bottom
+      opacity: 0 !important
 
+  &.on h1
+    opacity: 0
 
 #story .hero
   background-image: url(/images/hero/becak-lineup.jpg)
+
   #hero-blank-bottom
     top: 66.6%
+
+  &.on .hero-cell
+    opacity: 1
+
 
 #plans .hero
   background-image: url(/images/hero/plans-lg.jpg)
 #contact .hero
   background-image: url(/images/hero/contact-lg.jpg)
+#faq .hero
+  background-image: url(/images/hero/faq-lg.jpg)
 
 // hero fade in
 .is-js .hero .hero-grid::after
@@ -193,6 +213,8 @@ header
 .is-js .hero
   &.loaded .hero-grid::after
     opacity: 0
+
+#story > .is-js .hero
   &.on .hero-grid::after
     opacity: 0.9
     background-color: white
