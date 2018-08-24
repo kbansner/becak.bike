@@ -21,9 +21,11 @@ mixin link(href, name)
 
 mixin navigation(page)
   nav
-    +link('index.html', 'Becak.bike')(class={'logo':true,'on':page == 'index'})
+    -//+link('index.html', 'Becak.bike')(class={'logo':true,'on':page == 'index'})
+    +link('faq.html', 'FAQ')(class={'on':page == 'faq'})
     +link('contact.html', 'Build Resources')(class={'on':page == 'contact'})
     +link('plans.html', 'Becak Plans')(class={'on':page == 'plans'})
+    +link('index.html', 'Story')(class={'on':page == 'index'})
     -// +link('index.html', 'Tours')(class={'on':page == 'tours'})
 
 mixin hero(title)
@@ -45,7 +47,7 @@ mixin footer(page)
       +link('index.html', 'Story')(class={'logo':true,'on':page == 'index'})
       +link('plans.html', 'Becak Plans')(class={'on':page == 'plans'})
       +link('contact.html', 'Build Resources')(class={'on':page == 'contact'})
-      -//+link('faq.html', 'FAQ')(class={'on':page == 'faq'})
+      +link('faq.html', 'FAQ')(class={'on':page == 'faq'})
 
 
 mixin main-js
