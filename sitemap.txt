@@ -1,3 +1,4 @@
 http://becak.bike/index.html
 http://becak.bike/plans.html
 http://becak.bike/contact.html
+http://becak.bike/faq.html
