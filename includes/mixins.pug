@@ -28,18 +28,6 @@ mixin navigation(page)
     +link('index.html', 'Story')(class={'on':page == 'index'})
     -// +link('index.html', 'Tours')(class={'on':page == 'tours'})
 
-mixin hero(title)
-  .hero
-    .hero-grid
-      #hero-becak1.hero-cell
-      #hero-becak2.hero-cell
-      #hero-becak3.hero-cell
-      #hero-becak4.hero-cell
-      #hero-blank-bottom.hero-cell
-    h1 
-      span 
-        =title
-
 mixin footer(page)
   footer
     a.top(href='javascript:$(\'#main\').scrollTop(0);', title='Back to top') Top

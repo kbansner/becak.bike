@@ -19,11 +19,10 @@ html
   // scroll-snap-align: start
 
 header
-  max-width: 1024px
-  margin: 0 auto
-
   nav
     clearfix()
+    max-width: 1024px
+    margin: 0 auto
     padding: 15px
     font-size: 0.8rem
     a
@@ -76,25 +75,40 @@ footer
   background-size: cover
   box-sizing: border-box
 
+  // h1
+    // padding: 0
+    // font-weight: normal
+    // text-align: center
+    // box-sizing: border-box
+    // color: black
+
+#headline
+  margin: 2rem auto 0
+  max-width: 1024px
   h1
+    margin: 0 auto
     padding: 0
+    width: 70%
+    font-size: 3rem
     font-weight: normal
-    text-align: center
-    box-sizing: border-box
-    color: black
+    // line-height: 1.2
+
 
 // Large Hero
 // @media(min-width: $mediaBp1Width)
 .hero
   position: relative
-  height: 768px
-  max-height: 80vw
+  // height: 768px
+  height: 540px
+  max-height: 70vw
 
   .hero-grid
     position: relative
     height: 100%
+    max-width: 1024px
+    margin: 0 auto
 
-  h1
+  // h1
   .hero-cell
     position: absolute
     height: calc(33.33% - .35rem)
@@ -105,19 +119,19 @@ footer
   .hero-cell
     opacity: 0
 
-  h1
-    display: table
-    bottom: 33.33%
-    left: 50%
-    margin: 0
-    background-color: white
-    font-size: 2.2rem
-    line-height: 1.2
-    opacity: 0.97
-    span
-      display: table-cell
-      vertical-align: middle
-      padding: 0 1rem .6rem
+  // h1
+  //   display: table
+  //   bottom: 33.33%
+  //   left: 50%
+  //   margin: 0
+  //   background-color: white
+  //   font-size: 2.2rem
+  //   line-height: 1.2
+  //   opacity: 0.97
+  //   span
+  //     display: table-cell
+  //     vertical-align: middle
+  //     padding: 0 1rem .6rem
 
   #hero-blank-bottom
     top: 66.66%
@@ -194,13 +208,16 @@ footer
 
 #plans .hero
   background-image: url(/images/hero/plans-lg.jpg)
+  background-position-y: 70%
 #contact .hero
   background-image: url(/images/hero/contact-lg.jpg)
+  background-position-y: 60%
 #faq .hero
   background-image: url(/images/hero/faq-lg.jpg)
+  background-position-y: 2%
 
 // hero fade in
-.is-js .hero .hero-grid::after
+.is-js .hero::after
     position: absolute
     content: ''
     top: 0
@@ -210,15 +227,13 @@ footer
     background-color: #eee
     z-index: 1
     transition: opacity 1s linear
-.is-js .hero
-  &.loaded .hero-grid::after
+.is-js .hero.loaded::after
     opacity: 0
 
-#story > .is-js .hero
-  &.on .hero-grid::after
-    opacity: 0.9
-    background-color: white
-    transition: opacity 10ms linear
+// #story > .is-js .hero.on::after
+//     opacity: 0.9
+//     background-color: white
+//     transition: opacity 10ms linear
 
 // Vertical Tablet Hero
 @media(min-width: $breakpoint-phone) and (max-width: $mediaBp1Width)
@@ -235,21 +250,21 @@ footer
     #hero-blank-bottom
       visibility: hidden
 
-    h1
-      position: absolute
-      top: 25%
-      bottom: auto !important
-      left: 33.33%
-      margin: 0
-      height: 33vw
-      width: 33vw
-      text-align: center
-      transition: opacity 0.5s ease-in
-      background-color: white
-      font-size: 2.2rem
-      line-height: 1.4
-      color: black
-      opacity: 1
+    // h1
+    //   position: absolute
+    //   top: 25%
+    //   bottom: auto !important
+    //   left: 33.33%
+    //   margin: 0
+    //   height: 33vw
+    //   width: 33vw
+    //   text-align: center
+    //   transition: opacity 0.5s ease-in
+    //   background-color: white
+    //   font-size: 2.2rem
+    //   line-height: 1.4
+    //   color: black
+    //   opacity: 1
 
   #story .hero
     background-image: url(/images/hero/hero-md.jpg)
@@ -263,25 +278,27 @@ footer
 
 // Phone Hero
 @media(max-width: $breakpoint-phone)
+  h1
+    // position: relative
+    // display: block
+    // margin: 0 auto
+    padding-top: 1.7rem
+    // top: auto
+    // left: auto
+    // width: auto
+    // height: auto
+    // max-width: 80%
+    font-size: 1.6rem
+    // text-align: left
+    // opacity: 1 !important
+    // span
+    //   padding: 0
+
   .hero
+    position: relative
+    height: 50vw
     max-height: none
-    height: auto
-    background-image: none !important
-    h1
-      position: relative
-      display: block
-      margin: 0 auto
-      padding-top: 1.7rem
-      top: auto
-      left: auto
-      width: auto
-      height: auto
-      max-width: 80%
-      font-size: 1.6rem
-      text-align: left
-      opacity: 1 !important
-      span
-        padding: 0
+    // background-image: none !important
 
     .hero-grid
       position: relative
@@ -319,17 +336,18 @@ footer
     #hero-blank-bottom
       visibility: hidden
 
-  #story .hero-grid
-    background-image: url(/images/hero/hero-sm.jpg)
-    height: 100vw
+  #story .hero
+    // background-image: url(/images/hero/hero-sm.jpg)
+    background-image: url(/images/hero/hero-md.jpg)
+    // height: 100vw
 
-  #plans .hero-grid
+  #plans .hero
     background-image: url(/images/hero/plans-sm.jpg)
 
-  #contact .hero-grid
+  #contact .hero
     background-image: url(/images/hero/contact-sm.jpg)
 
-  #faq .hero-grid
+  #faq .hero
     background-image: url(/images/hero/faq-sm.jpg)
 
 //- end: Hero Unit
@@ -381,9 +399,10 @@ article
     padding-left: 3px
 
   .inner
-    center(80%)
+    margin: 0 auto
     padding-top: 2rem
     padding-bottom: 2rem
+    width: 70%
 
     & + .inner
     & + .boxed
@@ -577,7 +596,7 @@ figure
     margin: -3rem auto 0
     display: block
     height: 13vw
-    max-width: 1024px
+    // max-width: 1024px
     content: ''
     background: white url(/images/backgrounds/toe-step.png) center no-repeat
     background-size: contain
@@ -677,12 +696,15 @@ dl.plan
 
 
 .singlemedia
+  width: 70%
+.doublemedia
+  width: 80%
+.singlemedia
 .doublemedia
   clearfix()
   margin: 0 auto
   padding-top: 3rem
   padding-bottom: 2rem
-  max-width: 80%
   & > .media
     margin-bottom: 30px
 
