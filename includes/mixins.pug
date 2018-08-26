@@ -25,14 +25,14 @@ mixin navigation(page)
     +link('faq.html', 'FAQ')(class={'on':page == 'faq'})
     +link('contact.html', 'Build Resources')(class={'on':page == 'contact'})
     +link('plans.html', 'Becak Plans')(class={'on':page == 'plans'})
-    +link('index.html', 'Story')(class={'on':page == 'index'})
-    -// +link('index.html', 'Tours')(class={'on':page == 'tours'})
+    +link('story.html', 'Story')(class={'on':page == 'story'})
+    -// +link('story.html', 'Tours')(class={'on':page == 'tours'})
 
 mixin footer(page)
   footer
     a.top(href='javascript:$(\'#main\').scrollTop(0);', title='Back to top') Top
     nav
-      +link('index.html', 'Story')(class={'logo':true,'on':page == 'index'})
+      +link('story.html', 'Story')(class={'logo':true,'on':page == 'story'})
       +link('plans.html', 'Becak Plans')(class={'on':page == 'plans'})
       +link('contact.html', 'Build Resources')(class={'on':page == 'contact'})
       +link('faq.html', 'FAQ')(class={'on':page == 'faq'})
