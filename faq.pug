@@ -60,7 +60,12 @@ html
               div How can I book a you for an event or night out?
 
               .bd
-                p Send me email with your plan, or tell me what you’re interested in doing and we’ll come up with a plan. The cost is $10/mile per person or $50 per hour.
+                p
+                  |Email 
+                  +link('mailto:kai@becak.bike', 'me') 
+                  |
+                  | your San Francisco based plan, or tell me what you’re interested in doing and we’ll come up with one. 
+                  -//The cost is $10/mile per person or $50 per hour.
                   br
                   +link('mailto:kai@becak.bike', 'kai@becak.bike')
 
