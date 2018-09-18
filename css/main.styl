@@ -3,7 +3,6 @@
 
 html
   font-size: 19px
-  // font-family: 'times new roman',Times,serif
   font-family: 'EB Garamond', Times, serif
   @media(max-width: $breakpoint-phone)
     font-size: 16px
@@ -76,13 +75,6 @@ footer
   background-size: cover
   box-sizing: border-box
 
-  // h1
-    // padding: 0
-    // font-weight: normal
-    // text-align: center
-    // box-sizing: border-box
-    // color: black
-
 #headline
   margin: 2rem auto 0
   max-width: 1024px
@@ -94,14 +86,11 @@ footer
     font-weight: normal
     font-family: 'Ovo', serif
 
-    // line-height: 1.2
-
 
 // Large Hero
 // @media(min-width: $mediaBp1Width)
 .hero
   position: relative
-  // height: 768px
   height: 540px
   max-height: 70vw
 
@@ -111,7 +100,6 @@ footer
     max-width: 1024px
     margin: 0 auto
 
-  // h1
   .hero-cell
     position: absolute
     height: calc(33.33% - .35rem)
@@ -121,20 +109,6 @@ footer
 
   .hero-cell
     opacity: 0
-
-  // h1
-  //   display: table
-  //   bottom: 33.33%
-  //   left: 50%
-  //   margin: 0
-  //   background-color: white
-  //   font-size: 2.2rem
-  //   line-height: 1.2
-  //   opacity: 0.97
-  //   span
-  //     display: table-cell
-  //     vertical-align: middle
-  //     padding: 0 1rem .6rem
 
   #hero-blank-bottom
     top: 66.66%
@@ -233,11 +207,6 @@ footer
 .is-js .hero.loaded::after
     opacity: 0
 
-// #story > .is-js .hero.on::after
-//     opacity: 0.9
-//     background-color: white
-//     transition: opacity 10ms linear
-
 // Vertical Tablet Hero
 @media(min-width: $breakpoint-phone) and (max-width: $mediaBp1Width)
   .hero
@@ -253,22 +222,6 @@ footer
     #hero-blank-bottom
       visibility: hidden
 
-    // h1
-    //   position: absolute
-    //   top: 25%
-    //   bottom: auto !important
-    //   left: 33.33%
-    //   margin: 0
-    //   height: 33vw
-    //   width: 33vw
-    //   text-align: center
-    //   transition: opacity 0.5s ease-in
-    //   background-color: white
-    //   font-size: 2.2rem
-    //   line-height: 1.4
-    //   color: black
-    //   opacity: 1
-
   #story .hero
     background-image: url(/images/hero/hero-md.jpg)
   #plans .hero
@@ -282,20 +235,8 @@ footer
 // Phone Hero
 @media(max-width: $breakpoint-phone)
   h1
-    // position: relative
-    // display: block
-    // margin: 0 auto
     padding-top: 1.7rem
-    // top: auto
-    // left: auto
-    // width: auto
-    // height: auto
-    // max-width: 80%
     font-size: 1.6rem
-    // text-align: left
-    // opacity: 1 !important
-    // span
-    //   padding: 0
 
   .hero
     position: relative
@@ -722,7 +663,6 @@ dl.plan
   width: 6rem
   height: 1rem
   text-align: center
-  // outline: 1px dotted blue
 
 .top::before
   position absolute
@@ -737,7 +677,6 @@ dl.plan
   left: 50%
   margin-left: -15px
   bottom: 1.5rem
-  // outline: 1px dotted red
   width: 30px
   height: 28px
   background: url(/images/arrows.svg) 50% 26px repeat
