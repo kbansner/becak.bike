@@ -68,8 +68,6 @@ footer
 
 //- start: Hero Unit
 .hero
-.hero-grid
-.hero-cell
   background-position: center
   background-repeat: no-repeat
   background-size: cover
@@ -94,101 +92,15 @@ footer
   height: 540px
   max-height: 70vw
 
-  .hero-grid
-    position: relative
-    height: 100%
-    max-width: 1024px
-    margin: 0 auto
-
-  .hero-cell
-    position: absolute
-    height: calc(33.33% - .35rem)
-    width: calc(25% - .35rem)
-    transition: opacity 0.3s ease-in
-    z-index: 2
-
-  .hero-cell
-    opacity: 0
-
-  #hero-blank-bottom
-    top: 66.66%
-    left: 25%
-    background-color: white
-    opacity: 0
-    &::after
-      display: block
-      height: 100%
-      content: ''
-      opacity: 1
-      background: url(/images/arrows.svg) center 60% no-repeat
-      transition: background-position-y 300ms 3s ease-in
-    &:hover::after
-      background-position-y: 75%
-      background-size: 22%
-      cursor: s-resize
-      transition-delay: 0
-
-  #hero-becak1
-    top: 25%
-    background-image: url(/images/hero/IMG_4773.jpg)
-  &.on #hero-becak1
-    transition-delay: 400ms
-    transition-duration: 500
-
-  #hero-becak2
-    left: calc(25% + .35rem*.25)
-    top: 50%
-
-    background-image: url(/images/hero/IMG_4784.jpg)
-  &.on #hero-becak2
-    transition-delay: 600ms
-    transition-duration: 500
-
-  #hero-becak3
-    top: 33.33%
-    left: calc(50% + .35rem*.5)
-
-    border-right-width: $hero-border
-    background-image: url(/images/hero/arie-becak.jpg)
-  &.on #hero-becak3
-    transition-delay: 800ms
-    transition-duration: 500
-
-  #hero-becak4
-    top: 50%
-    left: calc(75% + .35rem*.75)
-    background-image: url(/images/hero/IMG_6813.jpg)
-    // background-image: url(/images/hero/IMG_5951.jpg)
-  &.on #hero-becak4
-      transition-delay: 1000ms
-      transition-duration: 500
-
-  @media(min-width: $mediaBp1Width)
-    &:hover #hero-blank-bottom
-      opacity: 0.97
-
-    &.on #hero-blank-bottom
-      opacity: 0 !important
-
-  &.on h1
-    opacity: 0
-
 #story .hero
-  background-image: url(/images/hero/becak-lineup.jpg)
-
-  #hero-blank-bottom
-    top: 66.6%
-
-  &.on .hero-cell
-    opacity: 1
-
+  background-image: url(/images/hero/hero-lg.jpg)
 
 #plans .hero
   background-image: url(/images/hero/plans-lg.jpg)
-  background-position-y: 70%
+  // background-position-y: 70%
 #contact .hero
   background-image: url(/images/hero/contact-lg.jpg)
-  background-position-y: 60%
+  // background-position-y: 60%
 #faq .hero
   background-image: url(/images/hero/faq-lg.jpg)
   background-position-y: 2%
@@ -242,48 +154,9 @@ footer
     position: relative
     height: 50vw
     max-height: none
-    // background-image: none !important
-
-    .hero-grid
-      position: relative
-      height: 50vw
-
-    .hero-cell
-      position: absolute
-      border: 0 solid white
-      transition: opacity 400ms ease-in
-      width: 50vw
-      height: 50vw
-      opacity: 0
-      &.on
-        opacity: 1
-
-    #hero-becak1
-      top: 50vw
-      border-width: $hero-border $hero-border 0 0
-
-    #hero-becak2
-      top: 0
-      left: 50vw
-      border-width: 0 0 $hero-border $hero-border
-
-    #hero-becak3
-      left: 50vw
-      top: 50vw
-      border-width: 0
-
-    #hero-becak4
-      top 0
-      left: 0
-      border-width: 0
-
-    #hero-blank-bottom
-      visibility: hidden
 
   #story .hero
-    // background-image: url(/images/hero/hero-sm.jpg)
-    background-image: url(/images/hero/hero-md.jpg)
-    // height: 100vw
+    background-image: url(/images/hero/hero-sm.jpg)
 
   #plans .hero
     background-image: url(/images/hero/plans-sm.jpg)
@@ -461,8 +334,8 @@ figure
     source
     img
       position: relative
-      height: auto
-      width: 100%
+      // height: auto
+      // width: 100%
       @media(min-width: $breakpoint-parallax)
         transform: translateZ(-.2px) scale(1.2)
         z-index: -2
