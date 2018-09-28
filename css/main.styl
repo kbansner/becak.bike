@@ -97,10 +97,8 @@ footer
 
 #plans .hero
   background-image: url(/images/hero/plans-lg.jpg)
-  // background-position-y: 70%
 #contact .hero
   background-image: url(/images/hero/contact-lg.jpg)
-  // background-position-y: 60%
 #faq .hero
   background-image: url(/images/hero/faq-lg.jpg)
   background-position-y: 2%
@@ -188,7 +186,6 @@ article
       width: 18px
       height: 16px
       vertical-align: text-bottom
-
 
   img
     display: block
@@ -327,8 +324,8 @@ figure
     source
     img
       position: relative
-      // height: auto
-      // width: 100%
+      height: auto // responsive image sizing
+      width: 100%  // responsive image sizing
       @media(min-width: $breakpoint-parallax)
         transform: translateZ(-.2px) scale(1.2)
         z-index: -2
