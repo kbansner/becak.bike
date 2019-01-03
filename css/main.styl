@@ -10,20 +10,8 @@ html
   @media(max-width: $breakpoint-phone)
     font-size: 16px
 
-
-#main
-  // scroll-snap-type: y proximity
-  overflow-y: scroll
-  overflow-x: hidden
-
-#main > .pg
-  position: relative
-  /* Snap align start. */
-  // scroll-snap-align: start
-
 header
   nav
-    clearfix()
     max-width: 1024px
     margin: 0 auto
     padding: 15px
@@ -155,10 +143,14 @@ header
   h1
     margin: 0 auto
     padding: 0
-    width: 70%
     font-size: 3rem
     font-weight: normal
     font-family: 'Ovo', serif
+    width: 70%
+    @media(max-width: $breakpoint-phone)
+      font-size: 11.5vmin
+      width: 90%
+
 
 
 // Large Hero
@@ -235,12 +227,13 @@ header
 
 //- end: Hero Unit
 
-article
+.pg
   clearfix()
   display: block
-  margin: 0 auto
+  margin: 2vw auto
   width: 1024px
   max-width: 100%
+  overflow: hidden
   background-color: white
   background-repeat: no-repeat
 
@@ -268,9 +261,8 @@ article
     max-width: 100%
 
   p
-    line-height: 1.2
-  p+p
-    margin-top: 1.5rem
+    margin: 1vw 0
+    line-height: 1.4
 
   p.heading:first-letter
     float: left
@@ -284,9 +276,11 @@ article
 
   .inner
     margin: 0 auto
-    padding-top: 2rem
-    padding-bottom: 2rem
+    padding-top: 1vw
+    padding-bottom: 1vw
     width: 70%
+    @media(max-width: $breakpoint-phone)
+      width: 90%
 
     & + .inner
     & + .boxed
@@ -296,10 +290,10 @@ article
 
   .boxed
     clearfix()
-    padding-top: 2rem
-    padding-left: 3rem
-    padding-right: 3rem
-    padding-bottom: 2rem
+    padding-top: 1vw
+    padding-left: 2vw
+    padding-right: 2vw
+    padding-bottom: 2vw
     img
       border: 3px solid #111
       @media(max-width: $breakpoint-phone)
@@ -343,15 +337,17 @@ picture.quarter-col
   .half-col
   .third-col
     float: none
-    margin-top: (3 * $boxed-border)
+    margin-top: (1.5 * $boxed-border)
     margin-left: auto
     margin-right: auto
+    margin-bottom: (3 * $boxed-border)
   .half-col:first-child
   .third-col:first-child
-    margin-top: 0
+    // margin-top: 0
 
   .quarter-col
-    margin-top: (3 * $boxed-border)
+    margin-top: $boxed-border
+    margin-bottom: (2 * $boxed-border)
     width: 50%
 
   picture.half-col
@@ -368,42 +364,17 @@ figure
   color: #666
   // background-color: white
 
-//- start: parallax section
-#main
-  @media(min-width: $breakpoint-parallax)
-    perspective: 1px
-    transform-style: preserve-3d
-  height: 100vh
-  overflow-x: hidden
-  overflow-y: scroll
-  -webkit-overflow-scrolling: touch
 
-@media(min-width: $breakpoint-parallax)
-  header
-    position: relative
-    transform: translateZ(-1px) scale(2)
-
-#intro
-.parallax .inner
-  position: relative
-  display: block
-  background-color: white
-  z-index: 1
-
-.parallax
-  position: relative
-  margin: 1rem auto 0
+picture.big
+  // position: relative
+  margin: 2vw auto 3vw
   max-width: 1024px
-  picture
-    object-fit: cover
-    source
-    img
-      position: relative
-      height: auto // responsive image sizing
-      width: 100%  // responsive image sizing
-      @media(min-width: $breakpoint-parallax)
-        transform: translateZ(-.2px) scale(1.2)
-        z-index: -2
+  // object-fit: cover
+  source
+  img
+    // position: relative
+    height: auto // responsive image sizing
+    width: 100%  // responsive image sizing
 
 //- end: parallax section
 
@@ -411,18 +382,17 @@ figure
 #horizontal
   position: relative
   background: white url(/images/backgrounds/becak-all.jpg) center left no-repeat
-  height: 50vw
-  max-height: 20rem
+  height: 42vw
+  width: 89vw
+  height: 45vmax
+  width: 98vmax
+  // max-height: 20rem
   background-size: cover
   transition: left 5ms ease-in
-  @media(max-width: $breakpoint-phone)
-    max-height: none
-#intro
-  padding: 1rem 0 0
-  .inner
-    padding-bottom: 0
+  // @media(max-width: $breakpoint-phone)
+  //   max-height: none
 
-.pg1 > article
+.pg1
   padding: 2rem 0 2rem 2rem
   background: black url(/images/story/pg1-reverse.jpg) 100% 50% no-repeat
   background-size: contain
@@ -456,26 +426,25 @@ figure
       margin-top: 102vw
 
 .pg2
+  display: flex
   margin-top: 3rem
-  & > article
-    display: flex
-    justify-content: center
-    align-items: center
-    max-height: 760px
-    height: 80vw
-    background: url(/images/backgrounds/cab-frame-top.png) center no-repeat
-    background-size: 100%
-    picture
-      display: block
-      max-width: 35%
-    img
-      box-sizing: border-box
-      border: 1.2vw solid black
+  justify-content: center
+  align-items: center
+  max-height: 760px
+  height: 80vw
+  background: url(/images/backgrounds/cab-frame-top.png) center no-repeat
+  background-size: 100%
+  picture
+    display: block
+    max-width: 35%
+  img
+    box-sizing: border-box
+    border: 1.2vw solid black
 
 .pg7
-  padding-bottom: 4rem
-  &.decorative:after
-    margin: -3rem auto 0
+  padding-bottom: 3vw
+  &:after
+    margin: -3vw auto 0
     display: block
     height: 13vw
     // max-width: 1024px
@@ -483,17 +452,17 @@ figure
     background: white url(/images/backgrounds/toe-step.png) center no-repeat
     background-size: contain
 
-.pg11 > article
+.pg11
   background-image: url(/images/backgrounds/spring-axel.png)
   background-position: left bottom
   background-size: contain
 
-.pg13 > article
+.pg13
   background-image: url(/images/backgrounds/grill.png)
   background-position: bottom
   background-size: contain
 
-.pg14 > article
+.pg14
   background-image: url(/images/backgrounds/flowers.png)
   background-position: 50% 70%
   background-size: 100%
@@ -547,7 +516,7 @@ dl.plan
     height: 140px
   .bd
     // font-family: Tahoma, sans-serif
-    font-size: 0.85rem
+    // font-size: 0.85rem
     color: #666
 
     overflow: hidden
@@ -563,8 +532,6 @@ dl.plan
       margin-right: 20px
       width: 100px
       height: 100px
-    .bd
-      font-size: 0.75rem
 
 
 .singlemedia
@@ -575,8 +542,8 @@ dl.plan
 .doublemedia
   clearfix()
   margin: 0 auto
-  padding-top: 3rem
-  padding-bottom: 2rem
+  padding-top: 3vw
+  padding-bottom: 2vw
   & > .media
     margin-bottom: 30px
 
@@ -591,7 +558,7 @@ a.top
   position: relative
   display: block
   float: right
-  margin: 1.2rem 0 .5rem
+  margin: 0
   width: 2rem
   height: 1rem
   text-align: center
@@ -605,18 +572,18 @@ a.top
     position absolute
     left: 0
     bottom: 0
-    width: 6rem
-    height: 5rem
+    width: 2rem
+    height: 3rem
     content: ''
 
   &::after
     position absolute
     left: 50%
-    margin-left: -15px
-    bottom: 1.5rem
-    width: 30px
-    height: 28px
-    background: url(/images/arrows.svg) 50% 26px repeat
+    margin-left: -0.5rem
+    bottom: 1rem
+    width: 1rem
+    height: 1rem
+    background: url(/images/arrows.svg) 50% 2px repeat
     background-size: 100%
     transform: rotate(180deg)
     opacity: 0.8
@@ -654,3 +621,11 @@ footer
     line-height: 1.3rem
     a
       margin: 0 .2rem
+
+@media(max-width: $breakpoint-phone)
+  .hide-phone
+    display: none
+
+  .singlemedia
+  .doublemedia
+    width: 90%

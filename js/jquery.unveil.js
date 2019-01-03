@@ -12,7 +12,7 @@
 
   $.fn.unveil = function(threshold, callback) {
 
-    var $w = $('#main'),
+    var $w = $(window),
         th = threshold || 0,
         retina = window.devicePixelRatio > 1,
         attrib = retina? "data-src-retina" : "data-src",

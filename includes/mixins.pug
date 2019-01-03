@@ -37,7 +37,7 @@ mixin navigation(page)
 
 mixin footer(page)
   footer
-    a.top(href='javascript:$(\'#main\').scrollTop(0);', title='Back to top') Top
+    a.top(href='javascript:$(window).scrollTop(0);', title='Back to top') Top
     nav
       +link('index.html', 'Story')(class={'logo':true,'on':page == 'index'})
       +link('plans.html', 'Becak Plans')(class={'on':page == 'plans'})
@@ -58,7 +58,7 @@ mixin main-js
 
   script(type='text/javascript').
     $(document).ready(function () { 
-      $('#main').addClass('is-js');
+      $('body').addClass('is-js');
       setTimeout(function(){$('.hero').addClass('loaded')}, 1200); 
     });
 

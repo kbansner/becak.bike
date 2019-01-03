@@ -11,127 +11,126 @@ html
     meta(property="og:url" content="http://becak.bike")
 
   body#contact
-    #main
-      header
-        +navigation('contact')
-        .hero
+    header#top
+      +navigation('contact')
+      .hero
 
-      #intro.pg
-        #headline
-          h1 Build Resources
+    .pg
+      #headline
+        h1 Build Resources
 
-        article
-          .doublemedia
-            .media.half-col
-              picture.img
-                -// source(srcset='images/IMG_5547.jpg', media='(max-width: 900px)') // this works!
-                img(src='images/contact/kai-pooh-garden.jpg', width='140', height='140', alt='Kai')
+      article
+        .doublemedia
+          .media.half-col
+            picture.img
+              -// source(srcset='images/IMG_5547.jpg', media='(max-width: 900px)') // this works!
+              img(src='images/contact/kai-pooh-garden.jpg', width='140', height='140', alt='Kai')
 
-              .bd
-                b Kai Bansner
-                div Becak Driver
-                +link('mailto:kai@becak.bike', 'kai@becak.bike')
-                div
-                  +link('https://goo.gl/maps/jQseaUcSBkB2', 'Mission District, San Francisco')(target='map', class='map-link', title='Map Location')
-  
-            .media.half-col
-              picture.img
-                -// source(srcset='images/IMG_5547.jpg', media='(max-width: 900px)') // this works!
-                img(src='images/contact/arie-dyanto.jpg', width='140', height='140', alt='Arie')
+            .bd
+              b Kai Bansner
+              div Becak Driver
+              +link('mailto:kai@becak.bike', 'kai@becak.bike')
+              div
+                +link('https://goo.gl/maps/jQseaUcSBkB2', 'Mission District, San Francisco')(target='map', class='map-link', title='Map Location')
 
-              .bd
-                b Arie Dyanto
-                div Bike Builder
-                +link('mailto:arie_dyanto@yahoo.com', 'arie_dyanto@yahoo.com')
-                div
-                  +link('https://goo.gl/maps/92nWDmuJMN62', 'Yogyakarta, Indonesia')(target='map', class='map-link', title='Map Location')
+          .media.half-col
+            picture.img
+              -// source(srcset='images/IMG_5547.jpg', media='(max-width: 900px)') // this works!
+              img(src='images/contact/arie-dyanto.jpg', width='140', height='140', alt='Arie')
 
-            .media.half-col
-              picture.img
-                img(src='images/contact/sinar-lout.jpg', width='140', height='140', alt='Sinar Lout Becak')
+            .bd
+              b Arie Dyanto
+              div Bike Builder
+              +link('mailto:arie_dyanto@yahoo.com', 'arie_dyanto@yahoo.com')
+              div
+                +link('https://goo.gl/maps/92nWDmuJMN62', 'Yogyakarta, Indonesia')(target='map', class='map-link', title='Map Location')
 
-              .bd
-                b Sinar Lout Becak
-                div Jogja Becak Factory
-                +link('mailto:vanessayemima9@gmail.com', 'vanessayemima9@gmail.com')
-                div
-                  +link('https://goo.gl/maps/dETra44msHv', 'Yogyakarta, Indonesia')(target='map', class='map-link', title='Map Location')
+          .media.half-col
+            picture.img
+              img(src='images/contact/sinar-lout.jpg', width='140', height='140', alt='Sinar Lout Becak')
 
-            .media.half-col
-              picture.img
-                img(src='images/contact/kus.jpg', width='140', height='140', alt='Kus')
+            .bd
+              b Sinar Lout Becak
+              div Jogja Becak Factory
+              +link('mailto:vanessayemima9@gmail.com', 'vanessayemima9@gmail.com')
+              div
+                +link('https://goo.gl/maps/dETra44msHv', 'Yogyakarta, Indonesia')(target='map', class='map-link', title='Map Location')
 
-              .bd
-                b Akasu Art
-                div Bike Welder
-                a(href='phone:+62 896157744744', title='WhatsApp') WA: +62 896-1577-4744 
-                +link('mailto:arie_dyanto@yahoo.com', 'arie_dyanto@yahoo.com')
-                div
-                  +link('https://goo.gl/maps/obieDr4wjJ82', 'Yogyakarta, Indonesia')(target='map', class='map-link', title='Map Location')
+          .media.half-col
+            picture.img
+              img(src='images/contact/kus.jpg', width='140', height='140', alt='Kus')
 
-            .media.half-col
-              picture.img
-                img(src='images/contact/babah-bikes.png', width='140', height='140', alt='')
+            .bd
+              b Akasu Art
+              div Bike Welder
+              a(href='phone:+62 896157744744', title='WhatsApp') WA: +62 896-1577-4744 
+              +link('mailto:arie_dyanto@yahoo.com', 'arie_dyanto@yahoo.com')
+              div
+                +link('https://goo.gl/maps/obieDr4wjJ82', 'Yogyakarta, Indonesia')(target='map', class='map-link', title='Map Location')
 
-              .bd
-                b Babah Bikes
-                div Chromoly Frame Builder
-                +link('http://babahbikes.com/', 'babahbikes.com')
-                div
-                  +link('https://goo.gl/maps/y9L3eALvPku', 'Malang, Indoneasia')(target='map', class='map-link', title='Map Location')
+          .media.half-col
+            picture.img
+              img(src='images/contact/babah-bikes.png', width='140', height='140', alt='')
 
-            .media.half-col
-              picture.img
-                img(src='images/contact/stainless.jpg', width='140', height='140', alt='')
+            .bd
+              b Babah Bikes
+              div Chromoly Frame Builder
+              +link('http://babahbikes.com/', 'babahbikes.com')
+              div
+                +link('https://goo.gl/maps/y9L3eALvPku', 'Malang, Indoneasia')(target='map', class='map-link', title='Map Location')
 
-              .bd
-                b Bengkel Las Mandiri Surya
-                div Stainless Steel Welding &amp; Polishing
-                a(href='phone:+62 813-2869-1020') +62 813-2869-1020
-                div 
-                  +link('https://goo.gl/maps/k6PqfRf2Dys', 'Yogyakarta, Indonesia')(target='map', class='map-link', title='Map Location')
-            .media.half-col
-              picture.img
-                img(src='images/contact/laser.jpg', width='140', height='140', alt='')
+          .media.half-col
+            picture.img
+              img(src='images/contact/stainless.jpg', width='140', height='140', alt='')
 
-              .bd
-                b Dimensi Laser Cutting
-                div Seat Leather Marking
-                div 
-                  +link('https://goo.gl/maps/Wv4M8JZigWN2', 'Yogyakarta, Indonesia')(target='map', class='map-link', title='Map Location')
-            .media.half-col
-              picture.img
-                img(src='images/contact/upholstery.jpg', width='140', height='140', alt='')
+            .bd
+              b Bengkel Las Mandiri Surya
+              div Stainless Steel Welding &amp; Polishing
+              a(href='phone:+62 813-2869-1020') +62 813-2869-1020
+              div 
+                +link('https://goo.gl/maps/k6PqfRf2Dys', 'Yogyakarta, Indonesia')(target='map', class='map-link', title='Map Location')
+          .media.half-col
+            picture.img
+              img(src='images/contact/laser.jpg', width='140', height='140', alt='')
 
-              .bd
-                b P. Jar
-                div Seat Covers
-                a(href='phone:+62 813-9245-2665') +62 813-9245-2665
-                div
-                  +link('https://goo.gl/maps/U2wph5T7ySH2', 'Yogyakarta, Indonesia')(target='map', class='map-link', title='Map Location')
-                  
-            .media.half-col
-              picture.img
-                img(src='images/contact/yoni-arts.jpg', width='140', height='140', alt='')
+            .bd
+              b Dimensi Laser Cutting
+              div Seat Leather Marking
+              div 
+                +link('https://goo.gl/maps/Wv4M8JZigWN2', 'Yogyakarta, Indonesia')(target='map', class='map-link', title='Map Location')
+          .media.half-col
+            picture.img
+              img(src='images/contact/upholstery.jpg', width='140', height='140', alt='')
 
-              .bd
-                b Yoni Arts
-                div Wood Finishing
-                a(href='phone:+62 813-9200-6944') +62 813-9200-6944
-                div
-                  +link('https://goo.gl/maps/eRBQ6VC2tnF2', 'Yogyakarta, Indonesia')(target='map', class='map-link', title='Map Location')
+            .bd
+              b P. Jar
+              div Seat Covers
+              a(href='phone:+62 813-9245-2665') +62 813-9245-2665
+              div
+                +link('https://goo.gl/maps/U2wph5T7ySH2', 'Yogyakarta, Indonesia')(target='map', class='map-link', title='Map Location')
+                
+          .media.half-col
+            picture.img
+              img(src='images/contact/yoni-arts.jpg', width='140', height='140', alt='')
 
-            .media.half-col
-              picture.img
-                img(src='images/contact/canopy.jpg', width='140', height='140', alt='')
+            .bd
+              b Yoni Arts
+              div Wood Finishing
+              a(href='phone:+62 813-9200-6944') +62 813-9200-6944
+              div
+                +link('https://goo.gl/maps/eRBQ6VC2tnF2', 'Yogyakarta, Indonesia')(target='map', class='map-link', title='Map Location')
 
-              .bd
-                b Bekleding Ba-Ik
-                div Canopy Covering
-                a(href='phone:+62 877-3834-1377') +62 877-3834-1377
-                div 
-                  +link('https://goo.gl/maps/k5KnyZFJAz42', 'Yogyakarta, Indonesia')(target='map', class='map-link', title='Map Location')
+          .media.half-col
+            picture.img
+              img(src='images/contact/canopy.jpg', width='140', height='140', alt='')
 
-  
-      +footer('contact')
-    +main-js
+            .bd
+              b Bekleding Ba-Ik
+              div Canopy Covering
+              a(href='phone:+62 877-3834-1377') +62 877-3834-1377
+              div 
+                +link('https://goo.gl/maps/k5KnyZFJAz42', 'Yogyakarta, Indonesia')(target='map', class='map-link', title='Map Location')
+
+
+    +footer('contact')
+  +main-js
