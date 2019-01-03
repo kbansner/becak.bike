@@ -1,3 +1,7 @@
+- var instagramIcon = '<svg width="18px" height="18px" viewBox="0 0 18 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path fill="#fff" d="M16.4347826,12.6638368 C16.4347826,14.7458238 14.7458238,16.4347826 12.6638368,16.4347826 L5.33616321,16.4347826 C3.25417622,16.4347826 1.56521739,14.7458238 1.56521739,12.6638368 L1.56521739,5.33616321 C1.56521739,3.25417622 3.25417622,1.56521739 5.33616321,1.56521739 L12.6638368,1.56521739 C14.7458238,1.56521739 16.4347826,3.25417622 16.4347826,5.33616321 L16.4347826,12.6638368 Z M18,5.34911356 C18,2.39597508 15.6040249,0 12.6491615,0 L5.35083852,0 C2.39597508,0 0,2.39597508 0,5.34911356 L0,12.6508864 C0,15.6040249 2.39597508,18 5.35083852,18 L12.6491615,18 C15.6040249,18 18,15.6040249 18,12.6508864 L18,5.34911356 Z M11.9408696,8.81043478 C11.9408696,7.08475619 10.5356821,5.68 8.81139592,5.68 C7.08326521,5.68 5.68,7.08475619 5.68,8.81043478 C5.68,10.5361134 7.08326521,11.9408696 8.81139592,11.9408696 C10.5356821,11.9408696 11.9408696,10.5361134 11.9408696,8.81043478 Z M13.3913043,8.69472874 C13.3913043,11.2840323 11.2840323,13.3913043 8.69657561,13.3913043 C6.10727203,13.3913043 4,11.2840323 4,8.69472874 C4,6.10542516 6.10727203,4 8.69657561,4 C11.2840323,4 13.3913043,6.10542516 13.3913043,8.69472874 Z M14.8695652,4.30337845 C14.8695652,4.95285966 14.344164,5.47826087 13.6946828,5.47826087 C13.0471403,5.47826087 12.5217391,4.95285966 12.5217391,4.30337845 C12.5217391,3.655836 13.0471403,3.13043478 13.6946828,3.13043478 C14.344164,3.13043478 14.8695652,3.655836 14.8695652,4.30337845 Z"></path></svg>'
+
+- var facebookIcon = '<svg width="9px" height="18px" viewBox="0 0 9 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path fill="#fff" d="M1.8469593,9.07202918 L1.8469593,17.7738831 L2.0755434,18 L5.3159512,18 L5.5427066,17.7738831 L5.5427066,8.92979435 L7.8925509,8.92979435 L8.1193063,8.72191267 L8.344233,6.05774491 L8.1174776,5.81156924 L5.5427066,5.81156924 L5.5427066,3.92057542 C5.5427066,3.47745922 5.9029551,3.1182251 6.3473226,3.1182251 L8.1577084,3.1182251 L8.3844638,2.8921082 L8.3844638,0.227940432 L8.1577084,0 L5.0983392,0 C3.3025827,0 1.8469593,1.45334819 1.8469593,3.2422247 L1.8469593,5.81156924 L0.2267554,5.81156924 L0,6.03768615 L0,8.70367744 L0.2267554,8.92979435 L1.8469593,8.92979435 L1.8469593,9.07202918"></path></svg>'
+
 mixin head(pageTitle)
   meta(charset='utf-8')
   meta(name='viewport', content='width=device-width, initial-scale=1')
@@ -18,15 +22,17 @@ mixin head(pageTitle)
 
 
 mixin link(href, name)
-  a(href=href)&attributes(attributes)= name
+  a(href=href)&attributes(attributes) !{name}
+  | 
 
 mixin navigation(page)
+  button.js-menu.menu(type="button")
+    span.bar
   nav
-    -//+link('index.html', 'Becak.bike')(class={'logo':true,'on':page == 'index'})
-    +link('faq.html', 'FAQ')(class={'on':page == 'faq'})
-    +link('contact.html', 'Build Resources')(class={'on':page == 'contact'})
-    +link('plans.html', 'Becak Plans')(class={'on':page == 'plans'})
     +link('index.html', 'Story')(class={'on':page == 'index'})
+    +link('plans.html', 'Becak Plans')(class={'on':page == 'plans'})
+    +link('contact.html', 'Build Resources')(class={'on':page == 'contact'})
+    +link('faq.html', 'FAQ')(class={'on':page == 'faq'})
     -// +link('index.html', 'Tours')(class={'on':page == 'tours'})
 
 mixin footer(page)
@@ -37,9 +43,14 @@ mixin footer(page)
       +link('plans.html', 'Becak Plans')(class={'on':page == 'plans'})
       +link('contact.html', 'Build Resources')(class={'on':page == 'contact'})
       +link('faq.html', 'FAQ')(class={'on':page == 'faq'})
-      .social
-        +link('https://www.facebook.com/becakSF/', 'FaceBook')
-        +link('https://www.instagram.com/becaksf/', 'Instagram')
+    .external
+      +link('https://www.instagram.com/becaksf/', instagramIcon)
+      +link('https://www.facebook.com/becakSF/', facebookIcon)
+      div
+        +link('http://becaksf.com/', 'becaksf.com')
+
+      
+      
 
 
 mixin main-js
@@ -50,4 +61,25 @@ mixin main-js
       $('#main').addClass('is-js');
       setTimeout(function(){$('.hero').addClass('loaded')}, 1200); 
     });
-    
+
+
+    $(document).ready(function () { 
+
+      /* A simple and scalable hamburger menu using css transitions. */
+      var isActive = false;
+
+      $('.js-menu').on('click', function() {
+        console.log('js-menu click')
+      	if (isActive) {
+          console.log('js-menu remove active')
+      		$(this).removeClass('active');
+      		$('body').removeClass('menu-open');
+      	} else {
+          console.log('js-menu active')
+      		$(this).addClass('active');
+      		$('body').addClass('menu-open');
+      	}
+
+      	isActive = !isActive;
+      });
+    })
