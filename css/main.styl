@@ -48,27 +48,6 @@ header
     a.on:hover
       text-decoration: none
 
-footer
-  nav
-    clearfix()
-    display: block
-    padding: 3rem
-    font-size: 0.8rem
-    background-color: black
-    a
-      display: block
-      margin-left: 2rem
-      float: left
-      color: white
-      white-space: nowrap
-      font-family: Tahoma, sans-serif
-      text-decoration: none
-    a.on
-      display: none
-
-  .social
-    float: right
-
 //- start: Hero Unit
 .hero
   background-position: center
@@ -434,17 +413,6 @@ figure
    picture
      center(400px)
 
-footer
-  a
-    display: block
-    margin: 2rem 0 4rem
-    text-align: center
-    font-family: Tahoma, sans-serif
-    font-size: 0.8rem
-    color: #666
-    text-transform: lowercase
-    text-decoration: none
-
 dl.plan
   clearfix()
   margin-top: 3rem
@@ -522,41 +490,76 @@ dl.plan
     margin-bottom: 30px
 
 
-.top
-  position: relative
-  display: block
-  margin: 4rem auto
-  width: 6rem
-  height: 1rem
-  text-align: center
-
-.top::before
-  position absolute
-  left: 0
-  bottom: 0
-  width: 6rem
-  height: 5rem
-  content: ''
-
-.top::after
-  position absolute
-  left: 50%
-  margin-left: -15px
-  bottom: 1.5rem
-  width: 30px
-  height: 28px
-  background: url(/images/arrows.svg) 50% 26px repeat
-  background-size: 100%
-  transform: rotate(180deg)
-  opacity: 0.8
-  content: ''
-  // transform: backgroundPosition 1s linear
-
-.top:hover::after
-  animation: animatedBackground 2s linear infinite;
-
 @keyframes animatedBackground
   from
     background-position-y: 100%
   to
     background-position-y: 01px
+
+a.top
+  position: relative
+  display: block
+  float: right
+  margin: 1.2rem 0 .5rem
+  width: 2rem
+  height: 1rem
+  text-align: center
+  font-family: Tahoma, sans-serif
+  font-size: 0.8rem
+  color: #666
+  text-transform: lowercase
+  text-decoration: none
+
+  &::before
+    position absolute
+    left: 0
+    bottom: 0
+    width: 6rem
+    height: 5rem
+    content: ''
+
+  &::after
+    position absolute
+    left: 50%
+    margin-left: -15px
+    bottom: 1.5rem
+    width: 30px
+    height: 28px
+    background: url(/images/arrows.svg) 50% 26px repeat
+    background-size: 100%
+    transform: rotate(180deg)
+    opacity: 0.8
+    content: ''
+    // transform: backgroundPosition 1s linear
+
+  &:hover::after
+    animation: animatedBackground 2s linear infinite;
+
+
+footer
+  display: block
+  padding: 1rem
+  font-size: 0.8rem
+  background-color: black
+
+  nav
+    clear: both
+
+  a
+    display: inline-block
+    // margin-left: 2rem
+    margin-left: 4vw
+    color: white
+    white-space: nowrap
+    font-family: Tahoma, sans-serif
+    text-decoration: none
+  a.on
+    display: none
+
+  .external
+    display: block
+    margin: 2.5rem 0
+    text-align: center
+    line-height: 1.3rem
+    a
+      margin: 0 .2rem
