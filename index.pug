@@ -1,7 +1,7 @@
 include includes/mixins.pug
 
 doctype html
-html
+html(lang="en-US")
   head
     +head('Building a custom becak')
     meta(name="description", content="An Indonesian Becak built for San Franciso. How I designed and built a modern Jogja style Becak (pedicab)")
@@ -37,8 +37,8 @@ html
         In 2014, another foreigner, Scott Thompson, built a custom becak to ride across Sumatra for charity, and incidentally, logged the record for distance on a becak. His bike had disc breaks, gears and a rear frame made of Chromoly steel. The builder of the rear frame, in Malang, had the old plans and access to good steel tubes. I ordered a frame like Scott’s but more curvy and upright, and I had the head tube angled forward so the frame would tilt to the inside when cornering.
 
     .pg2.pg
-      picture
-        img(class='lazyload', src='images/low.gif', data-src='images/story/IMG_5467.jpg', width='356', height='356' alt='Welding front cab of becak')
+      picture.explode
+        img(src='images/story/IMG_5467.jpg', width='356', height='356' alt='Welding front cab of becak')
         figure Front cab of becak
 
     .pg3.pg
@@ -63,9 +63,9 @@ html
     .pg5.pg
       .boxed
         picture.half-col
-          img(class='lazyload', src='images/low.gif', data-src='images/story/IMG_5821.jpg', width='450', alt='Steel bending tool')
+          img(class='lazyload', src='images/low.gif', data-src='images/story/IMG_5821.jpg', width='450', height='337.5', alt='Steel bending tool')
         picture.half-col.hide-phone
-          img(class='lazyload', src='images/low.gif', data-src='images/story/IMG_5801.jpg', width='450', alt='Welding becak arm rests')
+          img(class='lazyload', src='images/low.gif', data-src='images/story/IMG_5801.jpg', width='450', height='337.5', alt='Welding becak arm rests')
       .inner
         p.heading.
           The decorative steel arm rests which go all the way down along the edges of the passenger cab to the foot rest are normally made of solid steel rods and are very heavy. The newer becaks use thinner rods, but I liked the original gauge. We considered using aluminum to save weight but settled on tubular stainless steel for the straighter sections, with solid steel for the circles. Solid rod can be bent in a smaller radius. The bending and welding was a major task which took Kus well over a week.
@@ -77,9 +77,9 @@ html
     .pg7.pg
       .boxed
         picture.half-col
-          img(class='lazyload', src='images/low.gif', data-src='images/story/IMG_4795.jpg', width='450', alt='Becak drivers resting in their bike cabs')
+          img(class='lazyload', src='images/low.gif', data-src='images/story/IMG_4795.jpg', width='450', height='298', alt='Becak drivers resting in their bike cabs')
         picture.half-col.hide-phone
-          img(class='lazyload', src='images/low.gif', data-src='images/story/IMG_0110.jpg', width='450', alt='Curvy toe step')
+          img(class='lazyload', src='images/low.gif', data-src='images/story/IMG_0110.jpg', width='450', height='298', alt='Curvy toe step')
       .inner
         p.heading.
           Every region has its own style of becaks. The Jogja-style becak, with its big round wheel covers made from old oil drums, seems to be based on the avoidance of square shapes. All the Jogja becaks were made by just two companies, one of which is out of business and the other is struggling. I preferred the horizontal grill fins and curvy toe step of the defunct company.
@@ -104,13 +104,13 @@ html
     .pg11.pg
       .boxed
         picture.half-col.hide-phone
-          img(class='lazyload', src='images/low.gif', data-src='images/story/IMG_0099.jpg', width='450', alt='Dropouts with disc brake mounts')
+          img(class='lazyload', src='images/low.gif', data-src='images/story/IMG_0099.jpg', width='450', height='450', alt='Dropouts with disc brake mounts')
           figure Dropouts with disc brake mounts
         -//picture.third-col
         -//  img(src='images/story/Q5A7060.jpg', width='300', alt='Front brake cable splitter')
         -//  figure Front brake cable splitter 
         picture.half-col
-          img(class='lazyload', src='images/low.gif', data-src='images/story/Q5A7064.jpg', width='450', alt='Front disc brake mount')
+          img(class='lazyload', src='images/low.gif', data-src='images/story/Q5A7064.jpg', width='450',  alt='Front disc brake mount')
           figure Front disc brake mount
       .inner
         p.caption
@@ -136,14 +136,14 @@ html
     .pg14.pg
       .boxed
         picture.quarter-col.hide-phone
-          img(class='lazyload', src='images/low.gif', data-src='images/story/IMG_6089.jpg', width='250', alt='Red seat leather')
-        -/* img(src='images/story/IMG_6043.jpg', width='250px', alt='').quarter-col */
+          img(class='lazyload', src='images/low.gif', data-src='images/story/IMG_6089.jpg', width='300', height='300', alt='Red seat leather')
+        -/* img(src='images/story/IMG_6043.jpg', width='300px', alt='').quarter-col */
         picture.quarter-col
-          img(class='lazyload', src='images/low.gif', data-src='images/story/IMG_6228.jpg', width='250', alt='Laser etching')
+          img(class='lazyload', src='images/low.gif', data-src='images/story/IMG_6228.jpg', width='300', height='300', alt='Laser etching')
         picture.quarter-col.hide-phone
-          img(class='lazyload', src='images/low.gif', data-src='images/story/IMG_6234.jpg', width='250', alt='Laser etched flower design')
+          img(class='lazyload', src='images/low.gif', data-src='images/story/IMG_6234.jpg', width='300', height='300', alt='Laser etched flower design')
         picture.quarter-col
-          img(class='lazyload', src='images/low.gif', data-src='images/story/IMG_6285.jpg', width='250', alt='Leather and seat backing')
+          img(class='lazyload', src='images/low.gif', data-src='images/story/IMG_6285.jpg', width='300', height='300', alt='Leather and seat backing')
 
       .inner
         p.heading.
@@ -157,10 +157,10 @@ html
     .pg
       .boxed
         picture.half-col.hide-phone
-          img(class='lazyload', src='images/low.gif', data-src='images/story/IMG_6105.jpg', width='450', alt='Masihulan wheel cover')
+          img(class='lazyload', src='images/low.gif', data-src='images/story/IMG_6105.jpg', width='450', height='225', alt='Masihulan wheel cover')
         -/* img(src='images/story/IMG_6104.jpg', width='450px', alt='').third-col */
         picture.half-col
-          img(class='lazyload', src='images/low.gif', data-src='images/story/IMG_6241.jpg', width='450', alt='Cockatoo wheel cover')
+          img(class='lazyload', src='images/low.gif', data-src='images/story/IMG_6241.jpg', width='450', height='225', alt='Cockatoo wheel cover')
       .inner
         p.heading.
           The wheel covers are where a becak can promote its owner’s town or slogan or business. I bought three sets and had two of them painted. 
@@ -178,11 +178,11 @@ html
     .pg19.pg
       .boxed
         picture.third-col.hide-phone
-          img(class='lazyload', src='images/low.gif', data-src='images/story/IMG_6247.jpg', width='300', alt='Aluminum canopy tubing')
+          img(class='lazyload', src='images/low.gif', data-src='images/story/IMG_6247.jpg', width='300', height='300', alt='Aluminum canopy tubing')
         picture.third-col.hide-phone
-          img(class='lazyload', src='images/low.gif', data-src='images/story/IMG_6286.jpg', width='300', alt='Pipe bender')
+          img(class='lazyload', src='images/low.gif', data-src='images/story/IMG_6286.jpg', width='300', height='300', alt='Pipe bender')
         picture.third-col
-          img(class='lazyload', src='images/low.gif', data-src='images/story/IMG_6361.jpg', width='300', alt='Stainless steel polishing')
+          img(class='lazyload', src='images/low.gif', data-src='images/story/IMG_6361.jpg', width='300', height='300', alt='Stainless steel polishing')
       .inner
         p.heading.
           A collapsing canopy has a lot of moving parts to design and I wasn’t sure I’d need one in San Francisco. Then I pictured myself on a sunny day, snoozing in the shade of the canopy while waiting for a customer.
@@ -234,21 +234,19 @@ html
 
   script(type='text/javascript', src='/js/jquery.unveil-min.js')
   script(type='text/javascript').
-    $(window).ready(function () {
+    $(document).ready(function() {
       // Becak horizontal scroller
       var $horizontal = $('#horizontal'),
         vh = $(window).height(),
         ow = $horizontal.width(),
         ratio = (ow/2 + $(window).width())/vh,
-        hPos = ow;
-      console.log(vh, ow, ratio);
+        hPos = ow * 0.5;
       $(window).scroll(function () {
         var s = $(this).scrollTop() + $(window).height(),
             t = $horizontal.offset().top,
             shift = (s - t) * ratio;
-        console.log(s,t);
 
-        if (s - t > 0 && shift < 2000) {
+        if (s - t > 0 && shift < 3000) {
           $horizontal.css({
               'visibility': 'visible',
               'left': hPos - shift
@@ -258,5 +256,12 @@ html
           $horizontal.css('visibility', 'hidden');
         }
       });
-      $('img.lazyload').unveil();
+
+      $('img.lazyload').unveil(20, function(){
+        this.style.opacity = 1;
+      });
+
+      $('picture.explode').unveil(-120, function(){
+        this.classList.add('on');
+      });
     });

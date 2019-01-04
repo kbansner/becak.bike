@@ -24,8 +24,8 @@
       source = source || this.getAttribute("data-src");
       if (source) {
         this.setAttribute("src", source);
-        if (typeof callback === "function") callback.call(this);
       }
+      if (typeof callback === "function") callback.call(this);
     });
 
     function unveil() {

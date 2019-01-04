@@ -5,6 +5,7 @@
 mixin head(pageTitle)
   meta(charset='utf-8')
   meta(name='viewport', content='width=device-width, initial-scale=1')
+  -//meta(name='theme-color', content='#000000')
   <!-- Global site tag (gtag.js) - Google Analytics -->
   script(async, src="https://www.googletagmanager.com/gtag/js?id=UA-50336213-2")
   script.
@@ -13,8 +14,8 @@ mixin head(pageTitle)
     gtag('js', new Date());
     gtag('config', 'UA-50336213-2');
 
-  link(href='https://fonts.googleapis.com/css?family=EB+Garamond|Ovo' rel='stylesheet')
-  link(href='/css/normalize-min.css', rel='stylesheet', type='text/css')
+  -//link(href='https://fonts.googleapis.com/css?family=EB+Garamond|Ovo' rel='stylesheet')
+  link(href="https://fonts.googleapis.com/css?family=EB+Garamond|Ovo", media="none", rel="stylesheet", onload="if(media!='all')media='all'")
   link(href='/css/main.css', rel='stylesheet', type='text/css')
   title 
     |Becak.bike: 
@@ -26,7 +27,7 @@ mixin link(href, name)
   | 
 
 mixin navigation(page)
-  button.js-menu.menu(type="button")
+  button.js-menu.menu(type="button", aria-label="Site Navigation")
     span.bar
   nav
     +link('index.html', 'Story')(class={'on':page == 'index'})
@@ -39,7 +40,7 @@ mixin footer(page)
   footer
     a.top(href='javascript:$(window).scrollTop(0);', title='Back to top') Top
     nav
-      +link('index.html', 'Story')(class={'logo':true,'on':page == 'index'})
+      +link('index.html', 'Story')(class={'on':page == 'index'})
       +link('plans.html', 'Becak Plans')(class={'on':page == 'plans'})
       +link('contact.html', 'Build Resources')(class={'on':page == 'contact'})
       +link('faq.html', 'FAQ')(class={'on':page == 'faq'})
@@ -47,10 +48,7 @@ mixin footer(page)
       +link('https://www.instagram.com/becaksf/', instagramIcon)
       +link('https://www.facebook.com/becakSF/', facebookIcon)
       div
-        +link('http://becaksf.com/', 'becaksf.com')
-
-      
-      
+        +link('http://kaitours.bike/', 'kaitours.bike')
 
 
 mixin main-js
@@ -62,24 +60,18 @@ mixin main-js
       setTimeout(function(){$('.hero').addClass('loaded')}, 1200); 
     });
 
-
     $(document).ready(function () { 
-
       /* A simple and scalable hamburger menu using css transitions. */
       var isActive = false;
 
       $('.js-menu').on('click', function() {
-        console.log('js-menu click')
       	if (isActive) {
-          console.log('js-menu remove active')
       		$(this).removeClass('active');
       		$('body').removeClass('menu-open');
       	} else {
-          console.log('js-menu active')
       		$(this).addClass('active');
       		$('body').addClass('menu-open');
       	}
-
       	isActive = !isActive;
       });
-    })
+    });
