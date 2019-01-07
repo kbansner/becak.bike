@@ -8,8 +8,14 @@
 html
   font-size: 19px
   font-family: 'EB Garamond', Times, serif
+  overflow-x: hidden
+  -webkit-font-smoothing antialiased
+  -moz-osx-font-smoothing grayscale
   @media(max-width: $breakpoint-phone)
     font-size: 16px
+
+body
+  width: 100%
 
 header
   nav
@@ -222,7 +228,6 @@ header
   margin: 2vw auto
   width: 1024px
   max-width: 100%
-  overflow: hidden
   background-color: white
   background-repeat: no-repeat
 
@@ -360,9 +365,8 @@ picture.big
   position: relative
   background: white url(/images/backgrounds/becak-all.jpg) center left no-repeat
   height: 42vw
-  width: 89vw
-  height: 45vmax
-  width: 98vmax
+  max-height: 330px
+  width: 100%
   background-size: cover
   transition: left 5ms ease-in
 

@@ -239,8 +239,8 @@ html(lang="en-US")
       var $horizontal = $('#horizontal'),
         vh = $(window).height(),
         ow = $horizontal.width(),
-        ratio = (ow/2 + $(window).width())/vh,
-        hPos = ow * 0.5;
+        ratio = (ow * 0.25 + $('.pg:first').width())/vh,
+        hPos = ow;
       $(window).scroll(function () {
         var s = $(this).scrollTop() + $(window).height(),
             t = $horizontal.offset().top,
