@@ -31,8 +31,8 @@ mixin navigation(page)
     span.bar
   nav
     +link('index.html', 'Story')(class={'on':page == 'index'})
-    +link('plans.html', 'Becak Plans')(class={'on':page == 'plans'})
-    +link('contact.html', 'Build Resources')(class={'on':page == 'contact'})
+    +link('plans.html', 'Plans')(class={'on':page == 'plans'})
+    +link('contact.html', 'Contributors')(class={'on':page == 'contact'})
     +link('faq.html', 'FAQ')(class={'on':page == 'faq'})
     -// +link('index.html', 'Tours')(class={'on':page == 'tours'})
 
@@ -41,8 +41,8 @@ mixin footer(page)
     a.top(href='javascript:$(window).scrollTop(0);', title='Back to top') Top
     nav
       +link('index.html', 'Story')(class={'on':page == 'index'})
-      +link('plans.html', 'Becak Plans')(class={'on':page == 'plans'})
-      +link('contact.html', 'Build Resources')(class={'on':page == 'contact'})
+      +link('plans.html', 'Plans')(class={'on':page == 'plans'})
+      +link('contact.html', 'Contributors')(class={'on':page == 'contact'})
       +link('faq.html', 'FAQ')(class={'on':page == 'faq'})
       +link('http://kaitours.bike', 'KaiTours')
       +link('https://www.facebook.com/becakSF/', facebookIcon)(class='social')
