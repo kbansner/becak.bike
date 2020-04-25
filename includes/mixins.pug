@@ -44,11 +44,14 @@ mixin footer(page)
       +link('plans.html', 'Becak Plans')(class={'on':page == 'plans'})
       +link('contact.html', 'Build Resources')(class={'on':page == 'contact'})
       +link('faq.html', 'FAQ')(class={'on':page == 'faq'})
+      +link('http://kaitours.bike', 'KaiTours')
+      +link('https://www.facebook.com/becakSF/', facebookIcon)(class='social')
+      +link('https://www.instagram.com/becaksf/', instagramIcon)(class='social')
+
     .external
-      +link('https://www.instagram.com/becaksf/', instagramIcon)
-      +link('https://www.facebook.com/becakSF/', facebookIcon)
+      +link('/index.html', '<img src="/images/logo-wheel-reverse-sm.png" width="40" height="40" alt="BecakSF">')
       div
-        +link('http://kaitours.bike/', 'kaitours.bike')
+        +link('/index.html', 'becaksf.com')
 
 
 mixin main-js
